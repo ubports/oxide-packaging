@@ -1,3 +1,11 @@
+oxide-qt (1.0.0~bzr437-0ubuntu2) UNRELEASED; urgency=medium
+
+  [ Jamie Strandboge ]
+  * merge debian/changelog and debian/changelog.chromium to be more clear
+    (LP: #1297020)
+
+ -- Jamie Strandboge <jamie@ubuntu.com>  Tue, 25 Mar 2014 10:35:39 -0500
+
 oxide-qt (1.0.0~bzr437-0ubuntu1) trusty; urgency=low
 
   * Initial upload
