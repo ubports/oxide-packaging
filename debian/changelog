@@ -1,4 +1,4 @@
-oxide-qt (1.0.0~bzr437-0ubuntu1) UNRELEASED; urgency=low
+oxide-qt (1.0.0~bzr437-0ubuntu1) trusty; urgency=low
 
   * Initial upload
 
