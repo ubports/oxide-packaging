@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+%:
+	dh $@ --parallel --dbg-package=oxideqt-dbg
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DENABLE_OXIDEQMLSCENE=1
+
+override_dh_auto_test:
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod 4755 debian/liboxideqtcore0/usr/lib/*/oxide-qt/chrome-sandbox

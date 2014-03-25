@@ -1,0 +1,83 @@
+Source: oxide-qt
+Section: libs
+Priority: extra
+Maintainer: Chris Coulson <chris.coulson@canonical.com>
+Build-Depends: debhelper (>= 8.0.0),
+    cmake,
+    qt5-qmake,
+    qt5-default,
+    qtdeclarative5-dev,
+    qtbase5-private-dev,
+    qtdeclarative5-private-dev,
+    python,
+    pkg-config,
+    libglib2.0-dev,
+    libnss3-dev,
+    libpci-dev,
+    libgcrypt11-dev,
+    libdbus-1-dev,
+    libudev-dev,
+    libpulse-dev,
+    libasound2-dev,
+    libx11-dev,
+    libcap-dev,
+    libdrm-dev,
+    libfontconfig1-dev,
+    libfreetype6-dev,
+    libpango1.0-dev,
+    libxext-dev,
+    libxfixes-dev,
+    libxrandr-dev,
+    libxi-dev,
+    libxcomposite-dev,
+    libkrb5-dev,
+    gperf,
+    bison
+Standards-Version: 3.9.5
+Homepage: https://launchpad.net/oxide
+
+Package: liboxideqtcore0
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Web browser engine library for Qt (core)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the core library, sandbox, renderer and support
+ files required to run applications with Oxide
+
+Package: liboxideqt-qmlplugin
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Web browser engine library for Qt (QML plugin)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the QML plugin required to run QML applications with
+ Oxide
+
+Package: oxideqmlscene
+Section: misc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Web browser engine library for Qt (QML application runner)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides an application runner which is similar to qmlscene,
+ required to run QML applications with Oxide if you require support for
+ accelerated compositing
+
+Package: oxideqt-dbg
+Architecture: any
+Section: debug
+Depends: ${misc:Depends},
+    liboxideqtcore0 (= ${binary:Version}),
+    liboxideqt-qmlplugin (= ${binary:Version})
+Description: Web browser engine library for Qt (Debug symbols)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the debugging symbols for Oxide
