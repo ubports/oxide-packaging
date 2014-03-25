@@ -6,21 +6,6 @@ Source: https://code.launchpad.net/~oxide-developers/oxide/oxide.trunk
 Files: *
 Copyright: 2013-2014 Canonical Ltd
 License: LGPL (v2.1 or later)
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2.1 of the License, or (at your option) any later version.
- .
- This library is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- Lesser General Public License for more details.
- .
- You should have received a copy of the GNU Lesser General Public
- License along with this library; if not, write to the Free
- Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- .
- Full license text: /usr/share/common-licenses/LGPL-2.1
 
 Files: chromium/src/{PRESUBMIT.py}
 Copyright: Copyright (c) 2009 The Chromium Authors. All rights reserved. Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.:
@@ -18641,9 +18626,8 @@ License: LGPL (v2 or later)
  Library General Public License for more details.
  .
  You should have received a copy of the GNU Library General Public License
- along with this library; see the file COPYING.LIB.  If not, write to
- the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
- Boston, MA 02110-1301, USA.
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  .
  Full license text: /usr/share/common-licenses/LGPL-2
 
@@ -18659,8 +18643,8 @@ License: LGPL (v2.1 or later)
  Lesser General Public License for more details.
  .
  You should have received a copy of the GNU Lesser General Public
- License along with this library; if not, write to the Free
- Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  .
  Full license text: /usr/share/common-licenses/LGPL-2.1
 
