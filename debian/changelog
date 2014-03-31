@@ -1,17 +1,20 @@
-oxide-qt (1.0.0~bzr444-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.0.0~bzr448-0ubuntu1) UNRELEASED; urgency=medium
 
   [ Chris Coulson ]
-  * Update to r444
+  * Update to r447
+    - Rebase on Chromium 35.0.1908.4
     - Add support for JS dialogs (LP: #1214035)
     - Don't delete an active popup menu when another view is deleted
       (LP: #1257663)
-  * TODO: enable testsuite (LP: 1297810)
+    - Fix an invalid read and a memory corruption bug found by Valgrind
+    - Chromium needs to create GLX contexts with idenitcal attributes to
+      the GLX context created by Qt (LP: #1300284)
 
   [ Jamie Strandboge ]
   * merge debian/changelog and debian/changelog.chromium to be more clear
     (LP: #1297020)
 
- -- Jamie Strandboge <jamie@ubuntu.com>  Tue, 25 Mar 2014 10:35:39 -0500
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 28 Mar 2014 13:23:13 +0000
 
 oxide-qt (1.0.0~bzr437-0ubuntu1) trusty; urgency=low
 
