@@ -1,3 +1,16 @@
+oxide-qt (1.0.0~bzr452-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to r452
+    - Add WebView.newViewRequested API (LP: #1240749)
+    - Add WebView.navigationRequested API (LP: #1259219)
+    - Turn off WebCore debug symbols on native ARM builds, because we keep
+      hitting linker OOM conditions. These are also omitted from our
+      Chromium builds
+    - Don't ignore WebContext.cachePath (LP: #1298264)
+    - Add WebContext.sessionCookieMode API
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 01 Apr 2014 13:13:51 +0100
+
 oxide-qt (1.0.0~bzr448-0ubuntu1) trusty; urgency=medium
 
   [ Chris Coulson ]
