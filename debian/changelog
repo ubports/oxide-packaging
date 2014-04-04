@@ -1,3 +1,24 @@
+oxide-qt (1.0.0~bzr475-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to r475
+    - Update to Chromium 35.0.1916.6
+    - If WebView.newViewRequested isn't implemented, navigations should happen
+      in the originating view
+    - Refine WebView.newViewRequested and WebView.navigationRequested API's
+      (LP: #1300891)
+    - Improve the form factor detection (LP: #1301678)
+    - Add WebView.javaScriptConsoleMessage signal to allow the application
+      to intercept console messages from content (LP: #1291389)
+    - Improve the LoadEvent API
+    - Fix an abort when setting WebContext.sessionCookieMode on a context
+      that has no path (LP: #1301650)
+    - Expose the default WebContext via Oxide.defaultWebContext() (LP: #1297552)
+    - Send fake keydown and keyup events when composing text with an
+      input method (LP: #1300382)
+    - Bump the API version to 1.0
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 04 Apr 2014 19:28:27 +0100
+
 oxide-qt (1.0.0~bzr452-0ubuntu1) trusty; urgency=medium
 
   * Update to r452
