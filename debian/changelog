@@ -1,3 +1,22 @@
+oxide-qt (1.0.0~bzr489-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to r489
+    - Build with enable_plugins: 0 and toolkit_views: 0 to trim the size
+      a bit
+    - Ensure subframe navigations that require a new window become top-level
+      navigations for webviews that don't implement WebView.newViewRequested
+    - Add an option for enabling proprietary codecs (ENABLE_PROPRIETARY_CODECS)
+    - Build and install the l10n pak files
+    - Add file picker support (LP: #1260008)
+    - Add some resources to oxide.pak that were missing (eg, directory listing
+      HTML)
+    - Fix a crash that occurs when handling events from some mouse buttons
+    - Add cursor support (LP: #1257662)
+  * Split libffmpegsumo.so in to 2 separate packages (oxideqt-codecs and
+    oxideqt-codecs-extra) (LP: #1301341)
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 08 Apr 2014 15:27:09 +0100
+
 oxide-qt (1.0.0~bzr475-0ubuntu1) trusty; urgency=medium
 
   * Update to r475

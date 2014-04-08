@@ -42,7 +42,8 @@ Homepage: https://launchpad.net/oxide
 Package: liboxideqtcore0
 Architecture: any
 Multi-Arch: same
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+    oxideqt-codecs (= ${binary:Version}) | oxideqt-codecs-extra (= ${binary:Version})
 Description: Web browser engine library for Qt (core)
  Oxide is a web browser engine library based on Google Chromium, that makes
  it easy to embed web content in your Qt application
@@ -79,6 +80,64 @@ Section: debug
 Depends: ${misc:Depends},
     liboxideqtcore0 (= ${binary:Version}),
     liboxideqt-qmlplugin (= ${binary:Version})
+Description: Web browser engine library for Qt (Debug symbols)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the debugging symbols for Oxide
+
+Package: oxideqt-codecs
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: oxideqt-codecs-extra
+Breaks: liboxideqtcore0 (<< 1.0.0~bzr488)
+Replaces: oxideqt-codecs-extra, liboxideqtcore0 (<< 1.0.0~bzr488)
+Description: Web browser engine library for Qt (codecs)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides some media codecs needed for the HTML5 <audio> and
+ <video> tags. Included are the free Theora, Vorbis, Opus, VP8 and VP9
+ codecs
+
+Package: oxideqt-codecs-dbg
+Architecture: any
+Section: debug
+Depends: ${misc:Depends},
+    oxideqt-codecs (= ${binary:Version})
+Conflicts: oxideqt-codecs-extra-dbg
+Breaks: oxideqt-dbg (<< 1.0.0~bzr488)
+Replaces: oxideqt-codecs-extra-dbg, oxideqt-dbg (<< 1.0.0~bzr488)
+Description: Web browser engine library for Qt (Debug symbols)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the debugging symbols for Oxide
+
+Package: oxideqt-codecs-extra
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: oxideqt-codecs
+Breaks: liboxideqtcore0 (<< 1.0.0~bzr488)
+Replaces: oxideqt-codecs, liboxideqtcore0 (<< 1.0.0~bzr488)
+Description: Web browser engine library for Qt (codecs)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides some media codecs needed for the HTML5 <audio> and
+ <video> tags. Included are the Theora, Vorbis, Opus, VP8, VP9, MP3, AAC
+ and H.264 codecs
+
+Package: oxideqt-codecs-extra-dbg
+Architecture: any
+Section: debug
+Depends: ${misc:Depends},
+    oxideqt-codecs-extra (= ${binary:Version})
+Conflicts: oxideqt-codecs-dbg
+Breaks: oxideqt-dbg (<< 1.0.0~bzr488)
+Replaces: oxideqt-codecs-dbg, oxideqt-dbg (<< 1.0.0~bzr488)
 Description: Web browser engine library for Qt (Debug symbols)
  Oxide is a web browser engine library based on Google Chromium, that makes
  it easy to embed web content in your Qt application
