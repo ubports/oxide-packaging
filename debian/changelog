@@ -1,4 +1,4 @@
-oxide-qt (1.0.0~bzr489-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.0.0~bzr489-0ubuntu1) trusty; urgency=medium
 
   * Update to r489
     - Build with enable_plugins: 0 and toolkit_views: 0 to trim the size
