@@ -1,6 +1,6 @@
-oxide-qt (1.0.0~bzr489-0ubuntu1) trusty; urgency=medium
+oxide-qt (1.0.0~bzr490-0ubuntu1) UNRELEASED; urgency=medium
 
-  * Update to r489
+  * Update to r490
     - Build with enable_plugins: 0 and toolkit_views: 0 to trim the size
       a bit
     - Ensure subframe navigations that require a new window become top-level
@@ -12,6 +12,9 @@ oxide-qt (1.0.0~bzr489-0ubuntu1) trusty; urgency=medium
       HTML)
     - Fix a crash that occurs when handling events from some mouse buttons
     - Add cursor support (LP: #1257662)
+    - Reimplement Chromium's RenderSandboxHostLinux so that it runs the sandbox
+      IPC helper process as a proper child process rather than just forking
+      the browser process, which is dangerous for Oxide (LP: #1304648)
   * Split libffmpegsumo.so in to 2 separate packages (oxideqt-codecs and
     oxideqt-codecs-extra) (LP: #1301341)
 
