@@ -54,7 +54,8 @@ Description: Web browser engine library for Qt (core)
 Package: liboxideqt-qmlplugin
 Architecture: any
 Multi-Arch: same
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+    liboxideqtcore0 (= ${binary:Version})
 Description: Web browser engine library for Qt (QML plugin)
  Oxide is a web browser engine library based on Google Chromium, that makes
  it easy to embed web content in your Qt application
