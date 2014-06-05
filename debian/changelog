@@ -1,7 +1,7 @@
-oxide-qt (1.0.0~bzr514-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.0.1-0ubuntu0.14.04.1) UNRELEASED; urgency=medium
 
-  * Update to r514
-    - Update to Chromium 36.0.1933.0
+  * Update to v1.0.1
+    - Bump Chromium to 36.0.1985.49
     - Add experimental support for the Google Talk PPAPI plugin, to support
       Google Hangouts. This is hidden behind an environment variable that
       defaults to off (LP: #1308397)
@@ -10,6 +10,18 @@ oxide-qt (1.0.0~bzr514-0ubuntu1) UNRELEASED; urgency=medium
     - Fix various issues in GPU related code, including a crash (LP: #1308412)
     - Set no_javascript_access in ContentBrowserClient::CanCreateWindow()
       to fix random window opening failures (LP: #1307735)
+    - Add fullscreen API to WebView (LP: #1308947)
+    - Set a wait cursor when loading
+    - Add geolocation support
+    - Add a WebView.geolocationPermissionRequested API
+    - Allow unhandled key events to bubble up from the WebView (LP: #1313727)
+    - Don't generate keypress events with unmodified text for control
+      characters. This makes Oxide behave more like Chrome
+    - Add WebView.loadHtml() (LP: #1320848)
+    - Ensure we update the visibility in a renderer when a WebView is created
+      initially hidden and then made visible before any content is loaded
+      (LP: #1322622)
+    - Build fixes for Qt 5.3
   * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
   * Don't build with ENABLE_OXIDEQMLSCENE now, as that's the default
     - update debian/rules
