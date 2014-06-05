@@ -12,20 +12,20 @@ DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 	dh $@ --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DENABLE_OXIDEQMLSCENE=1 -DENABLE_TESTS=1 -DENABLE_PROPRIETARY_CODECS=0
+	dh_auto_configure -- -DENABLE_TESTS=1 -DENABLE_PROPRIETARY_CODECS=1
 
 override_dh_auto_test:
 	#xvfb-run -a -s "-screen 0 1024x768x24" dh_auto_test --max-parallel=1
 
 override_dh_auto_install:
 	dh_auto_install
-	dh_auto_configure -- -DENABLE_OXIDEQMLSCENE=1 -DENABLE_TESTS=1 -DENABLE_PROPRIETARY_CODECS=1
+	dh_auto_configure -- -DENABLE_TESTS=1 -DENABLE_PROPRIETARY_CODECS=0
 	dh_auto_build
-	dh_auto_install --destdir debian/tmp.extra
+	dh_auto_install --destdir debian/tmp.free
 
 override_dh_install:
 	dh_install
-	dh_install -poxideqt-codecs-extra --sourcedir=debian/tmp.extra usr/lib/$(DEB_HOST_MULTIARCH)/oxide-qt/libffmpegsumo.so
+	dh_install -poxideqt-codecs --sourcedir=debian/tmp.free usr/lib/$(DEB_HOST_MULTIARCH)/oxide-qt/libffmpegsumo.so
 
 override_dh_strip:
 	dh_strip -pliboxideqtcore0 --dbg-package=oxideqt-dbg

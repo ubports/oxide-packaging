@@ -1,3 +1,38 @@
+oxide-qt (1.0.0~bzr514-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to r514
+    - Update to Chromium 36.0.1933.0
+    - Add experimental support for the Google Talk PPAPI plugin, to support
+      Google Hangouts. This is hidden behind an environment variable that
+      defaults to off (LP: #1308397)
+    - Fix crash in oxide::GetFormFactorHint() on Unity 8 desktop preview
+      (LP: #1308398)
+    - Fix various issues in GPU related code, including a crash (LP: #1308412)
+    - Set no_javascript_access in ContentBrowserClient::CanCreateWindow()
+      to fix random window opening failures (LP: #1307735)
+  * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
+  * Don't build with ENABLE_OXIDEQMLSCENE now, as that's the default
+    - update debian/rules
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 16 Apr 2014 09:54:56 +0100
+
+oxide-qt (1.0.0~bzr501-0ubuntu1) trusty; urgency=medium
+
+  * Update to r501
+    - Update to Chromium 35.0.1916.27
+    - Use GpuDataManager for checking feature support before enabling
+      compositing (although, there's no GPU blacklist support yet)
+    - When resizing in non-compositing mode, handle the case where a site is
+      slow to repaint and Chromium gives us a backing store for the old size
+    - In compositing mode, make sure we composite during resizes
+    - Fix a crash during resize caused by us sending more than one acknowledge
+      for a buffer swap
+  * Don't advertise support for codecs that aren't supported by the
+    oxideqt-codecs* package installed
+    - add debian/patches/gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 10 Apr 2014 20:44:06 +0100
+
 oxide-qt (1.0.0~bzr490-0ubuntu1) trusty; urgency=medium
 
   * Update to r490
