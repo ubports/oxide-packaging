@@ -1,4 +1,4 @@
-oxide-qt (1.0.1-0ubuntu0.14.04.1) trusty-security; urgency=medium
+oxide-qt (1.0.1-0ubuntu0.14.04.2) trusty-security; urgency=medium
 
   * Update to v1.0.1
     - Bump Chromium to 36.0.1985.49
@@ -25,6 +25,7 @@ oxide-qt (1.0.1-0ubuntu0.14.04.1) trusty-security; urgency=medium
   * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
   * Don't build with ENABLE_OXIDEQMLSCENE now, as that's the default
     - update debian/rules
+  * Update build dependencies - we now depend on ninja
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 16 Apr 2014 09:54:56 +0100
 
