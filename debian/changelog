@@ -1,4 +1,4 @@
-oxide-qt (1.0.1-0ubuntu0.14.04.1) UNRELEASED; urgency=medium
+oxide-qt (1.0.1-0ubuntu0.14.04.1) trusty-security; urgency=medium
 
   * Update to v1.0.1
     - Bump Chromium to 36.0.1985.49
