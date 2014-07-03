@@ -1,3 +1,33 @@
+oxide-qt (1.1.0~bzr637-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to trunk snapshot r637
+    - Bump Chromium to 37.0.2062.3
+    - Fix LP: #1244373 - Screen blanks during video playback. Use the powerd
+      API for now on the device
+    - Fix LP: #1259216 - Expose WebView.icon property
+    - Fix LP: #1282063 - Add WebView.downloadRequested API
+    - Fix LP: #1307709 - webbrowser-app doesn't start in Unity 8 desktop
+      preview session. Fix this by using surfaceless EGL (pbuffers not supported
+      in the Mir EGL platform for mesa) and ensuring we always bind the
+      GLES API on Chromium's GPU thread
+    - Fix LP: #1312082 - Stop using deprecated compositing paths in Chromium
+    - Fix LP: #1323743 - OSK doesn't display after some time. Add a workaround
+      for this in Oxide for the time being
+    - Fix LP: #1324909 - User agent string is incorrect in newly opened
+      webviews and subframes
+    - Fix LP: #1332754 - Allow the frontbuffer and delegated frame data for
+      hidden webviews to be evicted
+    - Fix LP: #1252302 - Add devtools support
+    - Fix LP: #1312081 - Render content and handle input events directly in
+      the WebView, rather than having a per-process RenderViewItem
+    - Fix LP: #1330511 - Expose a Flickable-like API on WebView
+    - An empty preedit string in IM events doesn't mean we should do a commit.
+      Fixes an issue where deleting the last character of a composition does
+      a commit instead, causing the deletion to appear to fail
+    - Notify the IM of updates to cursor and anchor positions
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 03 Jul 2014 09:52:30 +0100
+
 oxide-qt (1.0.2-0ubuntu2) utopic; urgency=medium
 
   * Update to v1.0.2
