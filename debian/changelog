@@ -25,6 +25,7 @@ oxide-qt (1.1.0~bzr637-0ubuntu1) UNRELEASED; urgency=medium
       Fixes an issue where deleting the last character of a composition does
       a commit instead, causing the deletion to appear to fail
     - Notify the IM of updates to cursor and anchor positions
+  * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
 
  -- Chris Coulson <chris.coulson@canonical.com>  Thu, 03 Jul 2014 09:52:30 +0100
 
