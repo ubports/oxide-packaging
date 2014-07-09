@@ -29,6 +29,13 @@ oxide-qt (1.1.0~bzr640-0ubuntu1) utopic; urgency=medium
 
  -- Chris Coulson <chris.coulson@canonical.com>  Thu, 03 Jul 2014 09:52:30 +0100
 
+oxide-qt (1.0.2-0ubuntu3) utopic; urgency=medium
+
+  * Rebuild against Qt 5.3.0
+  * Change maintainer to Ubuntu Developers
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 18 Jun 2014 05:49:32 +0000
+
 oxide-qt (1.0.2-0ubuntu2) utopic; urgency=medium
 
   * Update to v1.0.2

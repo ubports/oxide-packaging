@@ -1,7 +1,7 @@
 Source: oxide-qt
 Section: libs
 Priority: extra
-Maintainer: Chris Coulson <chris.coulson@canonical.com>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Build-Depends: debhelper (>= 8.0.0),
     cmake,
     qt5-qmake,
