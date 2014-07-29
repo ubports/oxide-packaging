@@ -1,3 +1,16 @@
+oxide-qt (1.1.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.1.0
+    - Bump Chromium rev to 37.0.2062.44
+    - Fix LP: #1337338 - Don't crash when destroying a visible RWHV, which
+      happens when a render process crashes
+    - Fix LP: #1337890 - Update the power save blocker to use the Unity API
+      on touch devices
+    - Fix LP: #1338639 - Don't crash when calling WebView.loadHtml() before
+      the webview is fully constructed
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 29 Jul 2014 15:00:10 +0100
+
 oxide-qt (1.1.0~bzr640-0ubuntu1) utopic; urgency=medium
 
   * Update to trunk snapshot r640
