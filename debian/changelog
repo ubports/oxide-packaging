@@ -1,4 +1,4 @@
-oxide-qt (1.1.1-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.1.1-0ubuntu1) utopic; urgency=medium
 
   * Update to v1.1.1
     - Bump Chromium rev to 37.0.2062.58
