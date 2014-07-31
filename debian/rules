@@ -7,7 +7,7 @@
 export DH_OPTIONS
 
 DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-COMMON_OPTIONS := -DENABLE_TESTS=1 -DCMAKE_C_COMPILER=gcc-4.8 -DCMAKE_CXX_COMPILER=g++-4.8
+COMMON_OPTIONS := -DENABLE_TESTS=1 -DCMAKE_C_COMPILER=$(shell which gcc-4.8) -DCMAKE_CXX_COMPILER=$(shell which g++-4.8)
 
 %:
 	dh $@ --parallel
