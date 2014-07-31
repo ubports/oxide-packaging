@@ -1,3 +1,21 @@
+oxide-qt (1.1.1-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.1.1
+    - Bump Chromium rev to 37.0.2062.58
+    - Fix LP: #1337389 - Make ContentBrowserClient::CanCreateWindow work
+      again
+    - Fix LP: #1332996 - QtCreator often halts for a minute. Don't crash on
+      Qt platforms that don't implement QPlatformNativeInterface. As we can't
+      get a native display handle on these platforms, disallow any GL
+      implementation in Chromium and guard against accesses to
+      BrowserProcessMain::GetNativeDisplay()
+  * Build with GCC 4.8 for now because GCC 4.9 breaks web content layout on
+    the device, which sucks quite a lot right before RTM
+    - update debian/rules
+    - update debian/control
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 31 Jul 2014 10:41:43 +0100
+
 oxide-qt (1.1.0-0ubuntu1) utopic; urgency=medium
 
   * Update to v1.1.0

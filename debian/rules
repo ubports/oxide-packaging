@@ -7,19 +7,20 @@
 export DH_OPTIONS
 
 DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+COMMON_OPTIONS := -DENABLE_TESTS=1 -DCMAKE_C_COMPILER=gcc-4.8 -DCMAKE_CXX_COMPILER=g++-4.8
 
 %:
 	dh $@ --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DENABLE_TESTS=1 -DENABLE_PROPRIETARY_CODECS=1
+	dh_auto_configure -- $(COMMON_OPTIONS) -DENABLE_PROPRIETARY_CODECS=1
 
 override_dh_auto_test:
 	#xvfb-run -a -s "-screen 0 1024x768x24" dh_auto_test --max-parallel=1
 
 override_dh_auto_install:
 	dh_auto_install
-	dh_auto_configure -- -DENABLE_TESTS=1 -DENABLE_PROPRIETARY_CODECS=0
+	dh_auto_configure -- $(COMMON_OPTIONS) -DENABLE_PROPRIETARY_CODECS=0
 	dh_auto_build
 	dh_auto_install --destdir debian/tmp.free
 

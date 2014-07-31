@@ -37,7 +37,8 @@ Build-Depends: debhelper (>= 8.0.0),
     bison,
     xvfb,
     qtdeclarative5-qtquick2-plugin,
-    qtdeclarative5-test-plugin
+    qtdeclarative5-test-plugin,
+    g++-4.8
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/oxide
 
