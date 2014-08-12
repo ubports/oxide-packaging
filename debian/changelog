@@ -1,4 +1,39 @@
-oxide-qt (1.1.1-0ubuntu2) utopic; urgency=medium
+oxide-qt (1.2.0~bzr683-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to snapshot r683 from trunk
+    - Bump Chromium rev to 38.0.2114.2
+    - Don't modify Chromium's EGL implementation to select the GLES API when
+      creating contexts and calling eglMakeCurrent. These calls all happen
+      on a dedicated GPU thread with no application code running on it, and
+      the selected API is thread-local. We do still need to temporarily select
+      GLES at startup where we make the first few calls on the UI thread,
+      but we restore the originally selected API once done (only affects
+      Unity 8 desktop)
+    - Fix LP: #1286204 - Make double-tap-to-zoom work
+    - Adjust ui::ScaleGestureDetector::Config::min_pinch_update_span_delta to
+      remove the coarseness when pinching
+    - Fix LP: #1285750 - Add support for building a chromedriver binary
+    - Add OXIDE_DISABLE_SETUID_SANDBOX and OXIDE_DISABLE_SECCOMP_FILTER_SANDBOX
+      environment variables
+    - Assert we have a QGuiApplication on startup
+    - Fix LP: #1347924 - QProcess::waitForFinished() hangs - stop using
+      ContentMainRunner for starting the browser code - it does things with
+      process global state that are unexpected in a public library (eg,
+      setting the SIGCHLD handler to the default which breaks QProcess because
+      it relies on its own custom handler). We do still set the SIGPIPE action
+      to SIG_IGN, but only if it is SIG_DFL when we start. We also abort if the
+      SIGCHLD action is SIG_IGN when we initialize
+    - Fix LP: #1352952 - Ensure files returned by the file picker exist
+    - Fix LP: #1349510 - Browser crashes when attaching a photo in GMail -
+      when checking for an override for navigator.userAgent, limit the length
+      of the URL sent across IPC by trimming off the fragment, username and
+      password
+    - Add WebContext.cookieManager API
+  * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 12 Aug 2014 15:01:03 +0100
+
+oxide-qt (1.1.1-0ubuntu3) utopic; urgency=medium
 
   * Update to v1.1.1
     - Bump Chromium rev to 37.0.2062.58
