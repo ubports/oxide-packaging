@@ -65,6 +65,7 @@ oxide-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
         from CookieManager.setCookiesResponse and replace it with a list
         of failed cookies instead
   * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
+  * Add /usr/share/locale to liboxideqtcore0.install
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 03 Sep 2014 15:31:16 +0100
 

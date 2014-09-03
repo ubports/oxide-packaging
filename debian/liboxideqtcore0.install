@@ -4,3 +4,4 @@ usr/lib/*/oxide-qt/locales
 usr/lib/*/oxide-qt/oxide-renderer
 usr/lib/*/oxide-qt/*.dat
 usr/lib/*/oxide-qt/*.pak
+usr/share/locale
