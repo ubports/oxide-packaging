@@ -64,6 +64,7 @@ oxide-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
         to know which cookies failed to set. Get rid of the status parameter
         from CookieManager.setCookiesResponse and replace it with a list
         of failed cookies instead
+  * Refresh debian/patches/gross-hack-for-dual-ffmpeg-build.patch
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 03 Sep 2014 15:31:16 +0100
 
