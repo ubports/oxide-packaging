@@ -1,3 +1,72 @@
+oxide-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.2.0
+    - Bump Chromium rev to 38.0.2125.24
+    - Add WebContext.devtoolsBindIp property
+    - Refactor the various BrowserContext classes to avoid having to modify
+      2 implementations of BrowserContext each time we add functionality that's
+      shared between the normal and OTR contexts
+    - Assert that BrowserContext is only accessed on the main thread
+    - Fix LP: #1224707 - Use a localized Accept-Language header
+    - Fix various threading issues in the interaction of WebContext and
+      WebContextDelegateWorker
+    - Don't leak the default WebPreferences object when setting a custom one
+    - Make certificate revocation checking work properly, which is also
+      required for EV to work. Also fixes some console spew (LP: #1240723)
+    - Fix LP: #1361868 - Don't leak GeolocationPermissionRequest if there are
+      no handlers on WebView.geolocationPermissionRequested
+    - Fix LP: #1214034:
+      + Add API's to query the security status of the webview
+        (WebView.securityStatus property + SecurityStatus and SslCertificate
+        classes)
+      + Add WebView.certificateError signal and CertificateError class to
+        give the application a chance to allow certain SSL errors (some errors
+        are non-overridable and this is enforced by Oxide - in which case, the
+        signal only acts as a notification)
+      + Add WebView.blockedContent property, which is a bitmask of content
+        types that have currently been blocked - currently this only indicates
+        MixedDisplay and MixedScript, but will be extended later on for other
+        content types (eg, cookies, popups etc)
+      + Add WebView.setCanTemporarily{Display,Run}InsecureContent functions,
+        which allows the mixed content blocker preferences to be overridden
+        temporarily (will reset on navigation to a new page)
+    - Fix LP: #1355703 - Linkedin profiles don't render correctly because
+      it triggers the mixed content blocker. Change the default for
+      WebPreferences.canDisplayInsecureContent to true to allow secure sites
+      to display insecure content. We can do this now we have a security
+      status API, as displaying insecure content results in
+      SecurityStatus.securityLevel indicating a degraded level. This is the
+      same default as Chrome. Note, insecure scripts are still blocked by
+      default
+    - Various fixes to the CookieManager API:
+      - Ensure that requests don't always get the same request ID
+      - Don't depend on undefined behaviour (signed integer overflow)
+      - Chromium can run callbacks for cookie requests synchronously - take
+        this in to account to avoid potentially hidden reentrancy issues
+      - Ensure that the responses at the API level always happen asynchronously
+      - Make it possible to set a session cookie instead of setting the expiry
+        to the Unix epoch when an expiration date isn't specifed (which then
+        gets rejected by Chromium for being already expired)
+      - Ensure that session cookies returned from the API don't have an expiry
+        date set to the Unix epoch (LP: #1362558)
+      - Rename CookieManager.gotCookies to CookieManager.getCookiesResponse and
+        CookieManager.cookiesSet to CookieManager.setCookiesResponse
+      - CookieManager.getCookiesResponse no longer returns a status code.
+        The only time getCookies can fail is before WebContext is fully
+        initialized, which we can indicate synchronously by returning an
+        invalid request ID
+      - CookieManager.getCookies() has been added so that it's possible to
+        request the cookies for a specific URL
+      - The cookie expirationdate attribute now accepts QML's built-in Date
+        type
+      - URL parameters in the API are now QUrl rather than QString
+      - When the response to setCookies indicates an error it's impossible
+        to know which cookies failed to set. Get rid of the status parameter
+        from CookieManager.setCookiesResponse and replace it with a list
+        of failed cookies instead
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 03 Sep 2014 15:31:16 +0100
+
 oxide-qt (1.2.0~bzr683-0ubuntu1) utopic; urgency=medium
 
   * Update to snapshot r683 from trunk
