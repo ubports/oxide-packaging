@@ -1,4 +1,22 @@
-oxide-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.2.1-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.2.1
+    - Bump Chromium rev to 38.0.2125.58
+    - Fix LP: #1260048 - Don't initialize NSS with a user DB for now
+    - Fix LP: #1368117 - WebView.blockedContent doesn't get updated after
+      a reload, because whilst the browser-side state is cleared when a
+      navigation is committed, the renderer-side state is not cleared on a
+      reload
+    - Fix a null pointer deref for non-overridable SSL errors
+    - Fix LP: #1368385 - Make all subframe and subresource SSL errors non-
+      overridable, as overriding them doesn't always result in the security
+      status API indicating a degraded security level
+    - Fix LP: #1367446 - Ensure WebView.securityStatus.certificate is cleared
+      when navigating away from a HTTPS url
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 12 Sep 2014 08:59:12 +0100
+
+oxide-qt (1.2.0-0ubuntu1) utopic; urgency=medium
 
   * Update to v1.2.0
     - Bump Chromium rev to 38.0.2125.24
