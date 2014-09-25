@@ -1,3 +1,21 @@
+oxide-qt (1.2.2-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.2.2
+    - Bump Chromium rev to 38.0.2125.77
+    - Fix LP: #1324292 - Disable the touch editing mechanism to avoid
+      breaking the webbrowser-app user script
+    - Fix LP: #1362543 - Web application fails to load properly every other
+      time. Ensure that when a new cache is created, the initial cache stats
+      are stored to permanent storage immediately to avoid the cache being
+      left in an inconsistent state if the process exits uncleanly before
+      the stats are updated
+    - Fix LP: #1371166 - Geolocation fails when the location source returns
+      invalid values for some attributes
+    - Fix LP: #1372414 - SSL certificates report incorrect dates because
+      Chromium's base::Time measures milliseconds since the Windows epoch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 25 Sep 2014 15:32:47 +0100
+
 oxide-qt (1.2.1-0ubuntu1) utopic; urgency=medium
 
   * Update to v1.2.1
