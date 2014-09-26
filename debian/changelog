@@ -1,4 +1,11 @@
-oxide-qt (1.2.2-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.2.4-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.2.4
+    - Fix LP: #1352631 - Turn on accelerated canvas on krillin
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 26 Sep 2014 11:13:36 +0100
+
+oxide-qt (1.2.2-0ubuntu1) utopic; urgency=medium
 
   * Update to v1.2.2
     - Bump Chromium rev to 38.0.2125.77
