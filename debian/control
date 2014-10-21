@@ -147,3 +147,16 @@ Description: Web browser engine library for Qt (Debug symbols)
  it easy to embed web content in your Qt application
  .
  This package provides the debugging symbols for Oxide
+
+Package: oxideqt-chromedriver
+Architecture: any
+Section: misc
+Depends: ${misc:Depends},
+    liboxideqtcore0 (= ${binary:Version})
+Description: Web browser engine library for Qt (chromedriver build)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the chromedriver binary that can be used
+ as a WebDriver proxy to drive oxide with Selenium or any WebDriver
+ based client.
