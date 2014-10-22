@@ -1,21 +1,21 @@
-Index: oxide-qt-1.2.0/CMakeLists.txt
+Index: oxide-qt-1.3.0/CMakeLists.txt
 ===================================================================
---- oxide-qt-1.2.0.orig/CMakeLists.txt	2014-09-03 16:08:28.077973471 +0100
-+++ oxide-qt-1.2.0/CMakeLists.txt	2014-09-03 16:08:28.065973471 +0100
-@@ -101,7 +101,7 @@
-   list(APPEND GYP_COMMAND -Dproprietary_codecs=1)
+--- oxide-qt-1.3.0.orig/CMakeLists.txt	2014-10-15 18:24:00.382186136 +0100
++++ oxide-qt-1.3.0/CMakeLists.txt	2014-10-15 18:24:29.694186049 +0100
+@@ -122,7 +122,7 @@
+   list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
  else()
-   list(APPEND GYP_COMMAND -Dffmpeg_branding=Chromium)
--  list(APPEND GYP_COMMAND -Dproprietary_codecs=0)
-+  list(APPEND GYP_COMMAND -Dproprietary_codecs=1)
+   list(APPEND _GYP_COMMAND -Dffmpeg_branding=Chromium)
+-  list(APPEND _GYP_COMMAND -Dproprietary_codecs=0)
++  list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
  endif()
  if(DEFINED ENABLE_PLUGINS AND ENABLE_PLUGINS EQUAL 0)
-   list(APPEND GYP_COMMAND -Denable_plugins=0)
-Index: oxide-qt-1.2.0/third_party/chromium/src/content/renderer/renderer_webkitplatformsupport_impl.cc
+   list(APPEND _GYP_COMMAND -Denable_plugins=0)
+Index: oxide-qt-1.3.0/third_party/chromium/src/content/renderer/renderer_webkitplatformsupport_impl.cc
 ===================================================================
---- oxide-qt-1.2.0.orig/third_party/chromium/src/content/renderer/renderer_webkitplatformsupport_impl.cc	2014-09-03 16:08:28.077973471 +0100
-+++ oxide-qt-1.2.0/third_party/chromium/src/content/renderer/renderer_webkitplatformsupport_impl.cc	2014-09-03 16:08:28.065973471 +0100
-@@ -121,6 +121,12 @@
+--- oxide-qt-1.3.0.orig/third_party/chromium/src/content/renderer/renderer_webkitplatformsupport_impl.cc	2014-10-15 18:24:00.382186136 +0100
++++ oxide-qt-1.3.0/third_party/chromium/src/content/renderer/renderer_webkitplatformsupport_impl.cc	2014-10-15 18:24:00.378186136 +0100
+@@ -120,6 +120,12 @@
  #include "content/renderer/media/webrtc/peer_connection_dependency_factory.h"
  #endif
  
@@ -28,7 +28,7 @@ Index: oxide-qt-1.2.0/third_party/chromium/src/content/renderer/renderer_webkitp
  using blink::Platform;
  using blink::WebAudioDevice;
  using blink::WebBlobRegistry;
-@@ -403,6 +409,15 @@
+@@ -399,6 +405,15 @@
    if (!net::IsSupportedMediaMimeType(mime_type_ascii))
      return IsNotSupported;
  
@@ -44,7 +44,7 @@ Index: oxide-qt-1.2.0/third_party/chromium/src/content/renderer/renderer_webkitp
    if (!key_system.isEmpty()) {
      // Check whether the key system is supported with the mime_type and codecs.
  
-@@ -451,6 +466,16 @@
+@@ -447,6 +462,16 @@
    net::ParseCodecString(ToASCIIOrEmpty(codecs), &parsed_codec_ids, false);
    if (mime_type_ascii.empty())
      return false;
@@ -61,11 +61,11 @@ Index: oxide-qt-1.2.0/third_party/chromium/src/content/renderer/renderer_webkitp
    return media::StreamParserFactory::IsTypeSupported(
        mime_type_ascii, parsed_codec_ids);
  }
-Index: oxide-qt-1.2.0/third_party/chromium/src/net/base/mime_util.cc
+Index: oxide-qt-1.3.0/third_party/chromium/src/net/base/mime_util.cc
 ===================================================================
---- oxide-qt-1.2.0.orig/third_party/chromium/src/net/base/mime_util.cc	2014-09-03 16:08:28.077973471 +0100
-+++ oxide-qt-1.2.0/third_party/chromium/src/net/base/mime_util.cc	2014-09-03 16:08:28.065973471 +0100
-@@ -1340,6 +1340,15 @@
+--- oxide-qt-1.3.0.orig/third_party/chromium/src/net/base/mime_util.cc	2014-10-15 18:24:00.382186136 +0100
++++ oxide-qt-1.3.0/third_party/chromium/src/net/base/mime_util.cc	2014-10-15 18:24:00.378186136 +0100
+@@ -1343,6 +1343,15 @@
    return file_type != CERTIFICATE_MIME_TYPE_UNKNOWN;
  }
  
@@ -81,10 +81,10 @@ Index: oxide-qt-1.2.0/third_party/chromium/src/net/base/mime_util.cc
  void AddMultipartValueForUpload(const std::string& value_name,
                                  const std::string& value,
                                  const std::string& mime_boundary,
-Index: oxide-qt-1.2.0/third_party/chromium/src/net/base/mime_util.h
+Index: oxide-qt-1.3.0/third_party/chromium/src/net/base/mime_util.h
 ===================================================================
---- oxide-qt-1.2.0.orig/third_party/chromium/src/net/base/mime_util.h	2014-09-03 16:08:28.077973471 +0100
-+++ oxide-qt-1.2.0/third_party/chromium/src/net/base/mime_util.h	2014-09-03 16:08:28.065973471 +0100
+--- oxide-qt-1.3.0.orig/third_party/chromium/src/net/base/mime_util.h	2014-10-15 18:24:00.382186136 +0100
++++ oxide-qt-1.3.0/third_party/chromium/src/net/base/mime_util.h	2014-10-15 18:24:00.378186136 +0100
 @@ -46,6 +46,8 @@
  NET_EXPORT bool IsSupportedJavascriptMimeType(const std::string& mime_type);
  NET_EXPORT bool IsSupportedCertificateMimeType(const std::string& mime_type);
@@ -94,14 +94,14 @@ Index: oxide-qt-1.2.0/third_party/chromium/src/net/base/mime_util.h
  // Convenience function.
  NET_EXPORT bool IsSupportedMimeType(const std::string& mime_type);
  
-Index: oxide-qt-1.2.0/third_party/chromium/src/content/content_renderer.gypi
+Index: oxide-qt-1.3.0/third_party/chromium/src/content/content_renderer.gypi
 ===================================================================
---- oxide-qt-1.2.0.orig/third_party/chromium/src/content/content_renderer.gypi	2014-09-03 16:08:28.077973471 +0100
-+++ oxide-qt-1.2.0/third_party/chromium/src/content/content_renderer.gypi	2014-09-03 16:08:28.069973471 +0100
-@@ -17,6 +17,7 @@
-     '../mojo/mojo_base.gyp:mojo_js_bindings_lib',
+--- oxide-qt-1.3.0.orig/third_party/chromium/src/content/content_renderer.gypi	2014-10-15 18:24:00.382186136 +0100
++++ oxide-qt-1.3.0/third_party/chromium/src/content/content_renderer.gypi	2014-10-15 18:25:06.446185940 +0100
+@@ -20,6 +20,7 @@
      '../net/net.gyp:net',
      '../skia/skia.gyp:skia',
+     '../storage/storage_common.gyp:storage_common',
 +    '../third_party/ffmpeg/ffmpeg.gyp:ffmpeg',
      '../third_party/WebKit/public/blink.gyp:blink',
      '../third_party/icu/icu.gyp:icui18n',

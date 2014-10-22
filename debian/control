@@ -47,18 +47,32 @@ Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
     oxideqt-codecs (= ${binary:Version}) | oxideqt-codecs-extra (= ${binary:Version})
-Description: Web browser engine library for Qt (core)
+Description: Web browser engine library for Qt (core library and components)
  Oxide is a web browser engine library based on Google Chromium, that makes
  it easy to embed web content in your Qt application
  .
  This package provides the core library, sandbox, renderer and support
  files required to run applications with Oxide
 
+Package: liboxideqtquick0
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends},
+    liboxideqtcore0 (= ${binary:Version}),
+    oxideqt-codecs (= ${binary:Version}) | oxideqt-codecs-extra (= ${binary:Version})
+Description: Web browser engine library for Qt (QtQuick library)
+ Oxide is a web browser engine library based on Google Chromium, that makes
+ it easy to embed web content in your Qt application
+ .
+ This package provides the QtQuick library required to run QML applications
+ with Oxide
+
 Package: liboxideqt-qmlplugin
 Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
-    liboxideqtcore0 (= ${binary:Version})
+    liboxideqtcore0 (= ${binary:Version}),
+    liboxideqtquick0 (= ${binary:Version})
 Description: Web browser engine library for Qt (QML plugin)
  Oxide is a web browser engine library based on Google Chromium, that makes
  it easy to embed web content in your Qt application
@@ -83,6 +97,7 @@ Architecture: any
 Section: debug
 Depends: ${misc:Depends},
     liboxideqtcore0 (= ${binary:Version}),
+    liboxideqtquick0 (= ${binary:Version}),
     liboxideqt-qmlplugin (= ${binary:Version})
 Description: Web browser engine library for Qt (Debug symbols)
  Oxide is a web browser engine library based on Google Chromium, that makes
