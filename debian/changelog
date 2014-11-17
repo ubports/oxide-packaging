@@ -1,4 +1,4 @@
-oxide-qt (1.3.4-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.3.4-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.3.4
     - see USN-2410-1
