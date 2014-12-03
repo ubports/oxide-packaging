@@ -111,7 +111,9 @@ Package: oxideqt-codecs
 Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: oxideqt-codecs-extra
+Conflicts: oxideqt-codecs-extra:armhf [armhf], 
+           oxideqt-codecs-extra:i386 [i386],
+           oxideqt-codecs-extra:amd64 [amd64]
 Breaks: liboxideqtcore0 (<< 1.0.0~bzr488)
 Replaces: oxideqt-codecs-extra, liboxideqtcore0 (<< 1.0.0~bzr488)
 Description: Web browser engine library for Qt (codecs)
@@ -140,7 +142,9 @@ Package: oxideqt-codecs-extra
 Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: oxideqt-codecs
+Conflicts: oxideqt-codecs:armhf [armhf],
+           oxideqt-codecs:i386 [i386],
+           oxideqt-codecs:amd64 [amd64]
 Breaks: liboxideqtcore0 (<< 1.0.0~bzr488)
 Replaces: oxideqt-codecs, liboxideqtcore0 (<< 1.0.0~bzr488)
 Description: Web browser engine library for Qt (codecs)

@@ -1,3 +1,11 @@
+oxide-qt (1.3.5-0ubuntu2) UNRELEASED; urgency=medium
+
+  [ Zoltan Balogh <zoltan.balogh@canonical.com> ]
+  * Fix the Click chroot by limiting the codecs vs. codecs-extra conlict
+    for the same arch only
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 03 Dec 2014 10:42:54 +0000
+
 oxide-qt (1.3.5-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.3.5
