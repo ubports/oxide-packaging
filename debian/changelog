@@ -1,4 +1,4 @@
-oxide-qt (1.3.5-0ubuntu2) UNRELEASED; urgency=medium
+oxide-qt (1.3.5-0ubuntu2) vivid; urgency=medium
 
   [ Zoltan Balogh <zoltan.balogh@canonical.com> ]
   * Fix the Click chroot by limiting the codecs vs. codecs-extra conlict
