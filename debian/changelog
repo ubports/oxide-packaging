@@ -1,3 +1,46 @@
+oxide-qt (1.4.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.4.0
+    - Fix LP: #1297973 - Don't allow the BrowserContext to be deleted until
+      the render thread is quit in single process mode
+    - Fix LP: #1321969 - Add proper API for handling page closing:
+      + Add WebView.prepareToClose() which runs the current page's
+        beforeunload handler
+      + Add WebView.prepareToCloseResponse signal, which tells the embedder
+        whether a close should proceed
+      + Add WebView.closeRequested signal, driven from window.close()
+      + Ensure the current page's unload handler runs when a WebView is deleted
+    - Fix LP: #1353143 - Add an API for saving and restoring the state of a
+      WebView, used for session restore in the browser
+    - Fix LP: #1374494 - Warnings when processing GPU blacklist
+    - Fix LP: #1283291 - Cannot use multiple BrowserContexts in single-process
+      mode. Make WebView.context read-only in single-process mode (all
+      WebViews will use a default WebContext)
+    - Fix LP: #1326115 - Disable WebView.incognito in single-process mode. It
+      relies on using multiple BrowserContexts, which is not possible in
+      single process
+    - Fix LP: #1249147 - Use TCMalloc in the renderer process
+    - Fix LP: #1389777 - More natural scrolling - tweak the gesture fling curve
+    - Fix LP: #1398941 - Tidy up the LoadEvent sequence for failed loads
+    - Fix LP: #1381558 - Fix crash in
+      oxide::CompositorThreadProxy::SendSwapSoftwareFrameOnOwnerThread
+    - Fix LP: #1402382 - Fix a potential memory leak because of a refcount race
+    - Fix LP: #1398087 - Fix application crash when accessing
+      navigator.webkitPersistentStorage.requestQuota
+    - Turn pinch virtual viewport on for mobile form factors
+    - Limit the maximum decoded image size on mobile
+    - Remove the screen-dim lock when the application goes in to the background
+      (and restore it when it comes back in to the foreground)
+    - Don't create OTR BrowserContexts unnecessarily
+    - Add an experimental API for changing the process model
+      (Oxide.processModel)
+    - Don't leak WebPreferences if the WebView is deleted without ever
+      accessing WebView.preferences
+    - Add support for component builds
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Mon, 12 Jan 2015 18:05:47 +0000
+
 oxide-qt (1.3.5-0ubuntu8) vivid; urgency=medium
 
   * Revert back to 1.3.5-0ubuntu1 in anticipation of a workaround in
