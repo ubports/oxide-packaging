@@ -1,4 +1,4 @@
-oxide-qt (1.4.0-0ubuntu1) UNRELEASED; urgency=medium
+oxide-qt (1.4.0-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.4.0
     - Fix LP: #1297973 - Don't allow the BrowserContext to be deleted until
