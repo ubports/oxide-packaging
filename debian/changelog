@@ -1,10 +1,39 @@
-oxide-qt (1.3.5-0ubuntu2) vivid; urgency=medium
+oxide-qt (1.3.5-0ubuntu8) vivid; urgency=medium
 
-  [ Zoltan Balogh <zoltan.balogh@canonical.com> ]
-  * Fix the Click chroot by limiting the codecs vs. codecs-extra conlict
-    for the same arch only
+  * Revert back to 1.3.5-0ubuntu1 in anticipation of a workaround in
+    click instead (LP: #1408195)
 
- -- Chris Coulson <chris.coulson@canonical.com>  Wed, 03 Dec 2014 10:42:54 +0000
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 07 Jan 2015 06:36:25 +0000
+
+oxide-qt (1.3.5-0ubuntu7) vivid; urgency=medium
+
+  * Change back the dependency order, add arch specific replaces 
+    as a suggested fix to prevent the apt package installation problems 
+    (LP: #1400275)
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 10 Dec 2014 15:25:29 +0000
+
+oxide-qt (1.3.5-0ubuntu6) vivid; urgency=medium
+
+  * Use the new conflict arrangement still, but change the dependency 
+    order of Oxide's own codecs packages to prefer the -extras. 
+    This should hopefully solve the problem when setting up the 
+    autopkgtest environment with packages that have a hard depedency 
+    on the -extras package. (LP: #1399597)
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 05 Dec 2014 13:39:34 +0000
+
+oxide-qt (1.3.5-0ubuntu5) vivid; urgency=medium
+
+  * Revert previous upload because of autopkgtest failures (LP: #1399597)
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 05 Dec 2014 10:09:07 +0000
+
+oxide-qt (1.3.5-0ubuntu4) vivid; urgency=medium
+
+  * Add arch specific conflict to the oxideqt-codecs and oxideqt-codecs-extra
+
+ -- Zoltán Balogh <zoltan.balogh@canonical.com>  Wed, 03 Dec 2014 11:36:04 +0000
 
 oxide-qt (1.3.5-0ubuntu1) vivid; urgency=medium
 
