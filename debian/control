@@ -40,7 +40,10 @@ Build-Depends: debhelper (>= 8.0.0),
     qtdeclarative5-test-plugin,
     g++-4.8,
     libcups2-dev,
-    libexif-dev
+    libexif-dev,
+    libxcursor-dev,
+    libxrandr-dev,
+    libxtst-dev
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/oxide
 
