@@ -39,6 +39,7 @@ oxide-qt (1.4.2-0ubuntu1) UNRELEASED; urgency=medium
       accessing WebView.preferences
     - Add support for component builds
   * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Build with the default compiler instead of hard coding GCC 4.8
 
  -- Chris Coulson <chris.coulson@canonical.com>  Mon, 12 Jan 2015 18:05:47 +0000
 
