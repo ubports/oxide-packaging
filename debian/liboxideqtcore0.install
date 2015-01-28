@@ -2,6 +2,7 @@ usr/lib/*/libOxideQtCore.so.*
 usr/lib/*/oxide-qt/chrome-sandbox
 usr/lib/*/oxide-qt/locales
 usr/lib/*/oxide-qt/oxide-renderer
+usr/lib/*/oxide-qt/*.bin
 usr/lib/*/oxide-qt/*.dat
 usr/lib/*/oxide-qt/*.pak
 usr/share/locale

@@ -1,4 +1,4 @@
-oxide-qt (1.5.0-0ubuntu1) vivid; urgency=medium
+oxide-qt (1.5.0-0ubuntu2) vivid; urgency=medium
 
   * Update to v1.5.0
     - Bump Chromium rev to 41.0.2272.17
@@ -31,10 +31,22 @@ oxide-qt (1.5.0-0ubuntu1) vivid; urgency=medium
     - Fix LP: #1249387 - Add experimental support for playing audio through
       mediahub with the HTML media elements (Off by default. Video and
       MediaSource are not yet implemented)
+    - Update the form factor detection code to not rely on the EGL vendor for
+      detecting that we're on a device - use the Android system properties
+      instead
+    - Tidy up WebContents ownership during unload by adding a new singleton
+      responsible for handling unloading (WebContentsUnloader)
+    - Refactor WebFrame to be based around RenderFrameHost rather than
+      FrameTreeNode, which we aren't meant to be using
+    - Call QDesktopServices::openUrl on the UI thread. Failures are no longer
+      propagated back to the resource dispatcher, so all attempts to open a
+      URL externally will result in the load being cancelled whether there
+      is an external handler or not
   * Update debian/control to add extra build dependencies:
     - libmedia-hub-dev an armhf
     - libandroid-properties-dev on armhf, used for gathering data for GPU
       feature blacklisting when running on the phone
+  * Update debian/liboxideqtcore0.install to install V8 snapshot data
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 28 Jan 2015 14:08:55 +0000
 
