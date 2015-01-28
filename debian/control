@@ -42,7 +42,9 @@ Build-Depends: debhelper (>= 8.0.0),
     libexif-dev,
     libxcursor-dev,
     libxrandr-dev,
-    libxtst-dev
+    libxtst-dev,
+    libmedia-hub-dev [armhf],
+    libandroid-properties-dev [armhf]
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/oxide
 

@@ -1,3 +1,43 @@
+oxide-qt (1.5.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Update to v1.5.0
+    - Bump Chromium rev to 41.0.2272.17
+    - Fix LP: #1402975 - set a minimum viewport width of 980px on mobile
+      for sites that don't specify a viewport width. Fixes layout of some
+      desktop sites, and matches the behaviour of Chrome on Android
+    - Fix LP: #1412981 - Geolocation permission requests from subframes are
+      not cancelled if the frame is deleted or navigated to another site
+    - Fix LP: #1379776 - Spoof Android for the purposes of GPU feature
+      blacklisting on the phone. This means accelerated 2d canvas is now
+      enabled on all devices that Chrome enables it on (including the Nexus 4),
+      and other GPU features (eg, GPU rasterization) are enabled on devices
+      where Chrome supports it
+    - Fix LP: #1370366 - Add LocationBarController API, which allows the
+      renderer compositor to calculate the position of the browser top header.
+      This enables the header to be animated in sync with the content on
+      scrolling
+    - Fix LP: #1408136 - Committed LoadEvents fire for subframe loads when
+      they shouldn't
+    - Fix LP: #1377198 - CertificateError is not cancelled if you stop the
+      pending navigation
+    - Fix LP: #1373383 - The video player on Youtube does not resize correctly
+      when transitioning from landscape to portrait. Ensure we correctly
+      update the screen geometry and orientation visible to web content when
+      the device orientation changes, and turn on orientation events
+    - Really fix LP: #1337506 - Abort with
+      "FATAL:texture_manager.cc(76)] Check failed: texture_count_ == 0u (1 vs. 0)"
+      on shutdown
+    - Fix LP: #1398044 - Fails to build with Qt 5.4
+    - Fix LP: #1249387 - Add experimental support for playing audio through
+      mediahub with the HTML media elements (Off by default. Video and
+      MediaSource are not yet implemented)
+  * Update debian/control to add extra build dependencies:
+    - libmedia-hub-dev an armhf
+    - libandroid-properties-dev on armhf, used for gathering data for GPU
+      feature blacklisting when running on the phone
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 28 Jan 2015 14:08:55 +0000
+
 oxide-qt (1.4.2-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.4.2
