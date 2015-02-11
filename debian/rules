@@ -31,7 +31,6 @@ override_dh_install:
 override_dh_strip:
 	dh_strip -pliboxideqtcore0 --dbg-package=oxideqt-dbg
 	dh_strip -pliboxideqt-qmlplugin --dbg-package=oxideqt-dbg
-	dh_strip -poxideqmlscene --dbg-package=oxideqt-dbg
 	dh_strip -poxideqt-codecs --dbg-package=oxideqt-codecs-dbg
 	dh_strip -poxideqt-codecs-extra --dbg-package=oxideqt-codecs-extra-dbg
 

@@ -1,7 +1,7 @@
-oxide-qt (1.5.0-0ubuntu2) vivid; urgency=medium
+oxide-qt (1.5.2-0ubuntu1) UNRELEASED; urgency=medium
 
-  * Update to v1.5.0
-    - Bump Chromium rev to 41.0.2272.17
+  * Update to v1.5.2
+    - Bump Chromium rev to 41.0.2272.43
     - Fix LP: #1402975 - set a minimum viewport width of 980px on mobile
       for sites that don't specify a viewport width. Fixes layout of some
       desktop sites, and matches the behaviour of Chrome on Android
@@ -31,6 +31,8 @@ oxide-qt (1.5.0-0ubuntu2) vivid; urgency=medium
     - Fix LP: #1249387 - Add experimental support for playing audio through
       mediahub with the HTML media elements (Off by default. Video and
       MediaSource are not yet implemented)
+    - Fix LP: #1417042 - Remove inactive touch points from the current touch
+      state when we process a new touch event
     - Update the form factor detection code to not rely on the EGL vendor for
       detecting that we're on a device - use the Android system properties
       instead
@@ -47,6 +49,8 @@ oxide-qt (1.5.0-0ubuntu2) vivid; urgency=medium
     - libandroid-properties-dev on armhf, used for gathering data for GPU
       feature blacklisting when running on the phone
   * Update debian/liboxideqtcore0.install to install V8 snapshot data
+  * Drop oxideqmlscene - this was only necessary when qmlscene didn't support
+    setting up a shared GL context
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 28 Jan 2015 14:08:55 +0000
 
