@@ -56,6 +56,14 @@ oxide-qt (1.5.3-0ubuntu1) vivid; urgency=medium
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 28 Jan 2015 14:08:55 +0000
 
+oxide-qt (1.4.2-0ubuntu2) vivid; urgency=medium
+
+  * Rebuild against Qt 5.4.0.
+  * Add hack_qt540.patch to workaround Oxide bug.
+  * Add qt54_variantjs.patch to fix LP: #1417963
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 06 Feb 2015 10:12:02 +0000
+
 oxide-qt (1.4.2-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.4.2
