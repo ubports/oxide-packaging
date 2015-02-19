@@ -1,4 +1,4 @@
-oxide-qt (1.5.3-0ubuntu1) vivid; urgency=medium
+oxide-qt (1.5.3-0ubuntu2) vivid; urgency=medium
 
   * Update to v1.5.3
     - Bump Chromium rev to 41.0.2272.53
@@ -30,7 +30,8 @@ oxide-qt (1.5.3-0ubuntu1) vivid; urgency=medium
     - Fix LP: #1398044 - Fails to build with Qt 5.4
     - Fix LP: #1249387 - Add experimental support for playing audio through
       mediahub with the HTML media elements (Off by default. Video and
-      MediaSource are not yet implemented)
+      MediaSource are not yet implemented. Not built yet because it depends
+      on packages in universe)
     - Fix LP: #1417042 - Remove inactive touch points from the current touch
       state when we process a new touch event
     - Fix LP: #1417963 - Adapt to behaviour change in handling of QVariants
@@ -47,7 +48,6 @@ oxide-qt (1.5.3-0ubuntu1) vivid; urgency=medium
       URL externally will result in the load being cancelled whether there
       is an external handler or not
   * Update debian/control to add extra build dependencies:
-    - libmedia-hub-dev an armhf
     - libandroid-properties-dev on armhf, used for gathering data for GPU
       feature blacklisting when running on the phone
   * Update debian/liboxideqtcore0.install to install V8 snapshot data
