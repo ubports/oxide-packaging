@@ -1,3 +1,49 @@
+oxide-qt (1.6.0-0ubuntu1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.6.0
+    - Bump Chromium rev to 42.0.2311.50
+    - Fix LP: #1411159 - Proper fix for shutdown crash in
+      content::GpuChannelHost::Send, removing the workaround from the 1.5
+      branch
+    - Fix LP: #1277659 - Add WebContext.maxCacheSizeHint property, to allow
+      applications some control over the network cache size
+    - Fix LP: #1427882 - TextureRefHolder will crash if the context is lost
+    - Fix LP: #1430478 - Disable the GPU shader cache. Its memory footprint
+      makes it inappropriate on mobile devices and it writes the cache to the
+      current working directory if WebContext.dataPath isn't set
+    - Set the pulse audio media role so that audio output can take part in
+      pulse-level stream arbitration
+    - Disable webcore debug symbols and link with --no-keep-files-mapped
+      on native x86 builds because of linker OOM
+    - Add OXIDE_ENABLE_GPU_DEBUGGING environment variable, which corresponds
+      to --enable-gpu-debugging in Chrome
+    - Fix renderer crash in debug builds when location bar height is set to
+      zero
+    - Remove a spurious DCHECK that fires sometimes when a render process dies
+    - Add resources and strings required for built-in webui (eg, chrome://gpu/)
+    - Add OXIDE_ENABLE_GPU_SERVICE_LOGGING environment variable, which
+      corresponds to --enable-gpu-service-logging in Chrome
+    - Miscellaneous fixes for media-hub audio playback
+    - Use base::ThreadRestrictions::ScopedAllowIO when constructing
+      net::HttpCache, as that makes use of base::CPU which does IO on Arm.
+      Fixes a debug-mode startup abort
+    - Various component build fixes
+    - Don't statically link base in to oxide-renderer just to call
+      SetReleaseFreeMemoryFunction. Instead, expose an API from oxide-core to
+      allow oxide-renderer to call this without pulling in its own copy of base
+    - Only disable use of EGL_EXT_create_context_robustness and
+      GLX_ARB_create_context_robustness when the application provides a share
+      context that hasn't been created with these extensions
+    - Add OXIDE_DISABLE_GPU_DRIVER_BUG_WORKAROUNDS environment variable
+    - Drop support for building with Qt < 5.2
+    - Use net::URLRequest::IsHandledProtocol for checking if a scheme is
+      builtin
+    - Refactor how the GL implementation is selected, simplifying the code.
+      Also add OXIDE_DISABLE_GPU and OXIDE_DISABLE_GPU_COMPOSITING environment
+      variables for disabling all GPU features or GPU compositing respectively
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 24 Mar 2015 12:48:35 +0000
+
 oxide-qt (1.5.5-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.5.5
