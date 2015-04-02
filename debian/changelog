@@ -1,3 +1,11 @@
+oxide-qt (1.5.6-0ubuntu1) vivid; urgency=medium
+
+  * Update to v1.5.6
+    - Bump Chromium rev to 41.0.2272.118
+    - see USN-2556-1
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 02 Apr 2015 14:42:59 +0100
+
 oxide-qt (1.5.5-0ubuntu1) vivid; urgency=medium
 
   * Update to v1.5.5
