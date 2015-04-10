@@ -1,3 +1,12 @@
+oxide-qt (1.6.3-0ubuntu1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.6.3
+    - Fix LP: #1442398 - Invalid read in CompositorOutputSurfaceGL
+    - Fix LP: #1442458 - Minimum page scale shouldn't be 1 on mobile
+      form-factors
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 10 Apr 2015 14:28:15 +0100
+
 oxide-qt (1.6.2-0ubuntu1~ppa1) vivid; urgency=medium
 
   * Update to v1.6.2
