@@ -1,4 +1,4 @@
-oxide-qt (1.6.3-0ubuntu1~ppa1) UNRELEASED; urgency=medium
+oxide-qt (1.6.3-0ubuntu1~ppa1) vivid; urgency=medium
 
   * Update to v1.6.3
     - Fix LP: #1442398 - Invalid read in CompositorOutputSurfaceGL
