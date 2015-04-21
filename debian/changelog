@@ -1,3 +1,30 @@
+oxide-qt (1.7.1-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.7.1
+    - Bump Chromium rev to 43.0.2357.18
+    - Fix LP: #1435831 - Support EGLImage compositing path
+    - Fix LP: #1435835 - Improve synchronization between webview and UI
+      compositors
+    - Fix LP: #1422408 - Enable accelerated canvas on Arale
+    - Fix LP: #1426567 - Enable pinch-viewport on desktop
+    - Fix LP: #1439829 - Select the correct GL platform when the Qt platform
+      is "mirserver"
+    - Fix LP: #1399195 - Improve network callback event tests
+    - Fix LP: #1415662 - Cancelling a network request in onBeforeRedirect has
+      no effect
+    - Fix LP: #1422920 - Add LocationBarController.show(),
+      LocationBarController.hide() and LocationBarController.animated
+    - Fix LP: #1433472 - navigator.language doesn't work
+    - Fix LP: #1435418 - Clean up the classes related to the private interfaces
+      between the core library and the QtQuick library, making it more obvious
+      where code should live
+    - Fix LP: #1438902 - Enable webgl on mako
+    - Use the simple backend for the network cache
+    - Add EGLFS QPA support
+    - Fix cross-compiling armhf builds on x86
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 21 Apr 2015 18:06:02 +0100
+
 oxide-qt (1.6.4-0ubuntu0.15.04.2) vivid-security; urgency=medium
 
   * Update to v1.6.4
