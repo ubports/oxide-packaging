@@ -1,6 +1,6 @@
-oxide-qt (1.7.1-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+oxide-qt (1.7.2-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
-  * Update to v1.7.1
+  * Update to v1.7.2
     - Bump Chromium rev to 43.0.2357.18
     - Fix LP: #1435831 - Support EGLImage compositing path
     - Fix LP: #1435835 - Improve synchronization between webview and UI
