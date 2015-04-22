@@ -1,4 +1,4 @@
-oxide-qt (1.7.2-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+oxide-qt (1.7.3-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
   * Update to v1.7.2
     - Bump Chromium rev to 43.0.2357.18
@@ -19,6 +19,8 @@ oxide-qt (1.7.2-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
       between the core library and the QtQuick library, making it more obvious
       where code should live
     - Fix LP: #1438902 - Enable webgl on mako
+    - Fix LP: #1446864 - OxideQQuickScriptMessage::reply doesn't work with
+      Qt 5.4
     - Use the simple backend for the network cache
     - Add EGLFS QPA support
     - Fix cross-compiling armhf builds on x86
