@@ -1,6 +1,6 @@
-oxide-qt (1.6.4-0ubuntu0.15.04.2) vivid-security; urgency=medium
+oxide-qt (1.6.5-0ubuntu0.15.04.1) vivid-security; urgency=medium
 
-  * Update to v1.6.4
+  * Update to v1.6.5
     - see USN-2570-1
     - Bump Chromium rev to 42.0.2311.90
     - Fix LP: #1442398 - Invalid read in CompositorOutputSurfaceGL
@@ -48,6 +48,8 @@ oxide-qt (1.6.4-0ubuntu0.15.04.2) vivid-security; urgency=medium
     - Refactor how the GL implementation is selected, simplifying the code.
       Also add OXIDE_DISABLE_GPU and OXIDE_DISABLE_GPU_COMPOSITING environment
       variables for disabling all GPU features or GPU compositing respectively
+    - Fix LP: #1446864 - OxideQQuickScriptMessage::reply doesn't work with
+      Qt 5.4
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 15 Apr 2015 12:46:56 +0100
 
