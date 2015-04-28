@@ -4,6 +4,7 @@ oxide-qt (1.7.4-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
     - Bump Chromium rev to 43.0.2357.37
     - Fix LP: #1449239 - Memory corruption on Arale when the visibility of a
       webview is changed
+  * Make sure that liboxideqtquick0 is stripped correctly
 
  -- Chris Coulson <chris.coulson@canonical.com>  Tue, 28 Apr 2015 15:52:16 +0100
 
