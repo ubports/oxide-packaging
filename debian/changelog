@@ -1,4 +1,12 @@
-oxide-qt (1.7.4-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
+oxide-qt (1.7.5-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.7.5
+    - Don't use a mojo channel for the renderer IPC for now to see if it
+      fixes a renderer shutdown deadlock (hopefully fixes LP: #1442413)
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 29 Apr 2015 14:32:02 +0100
+
+oxide-qt (1.7.4-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
   * Update to v1.7.4
     - Bump Chromium rev to 43.0.2357.37
