@@ -1,9 +1,12 @@
-oxide-qt (1.7.6-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+oxide-qt (1.7.7-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
-  * Update to v1.7.6
+  * Update to v1.7.7
+    - Bump Chromium rev to 43.0.2357.45
     - Don't use a mojo channel for the renderer IPC for now to see if it
       fixes a renderer shutdown deadlock (hopefully fixes LP: #1442413)
     - Fix LP: #1450021 - Crash in WebFrame::Destroy
+    - Fix LP: #1450243 - Crash in WebPopupMenu::Close
+    - Fix LP: #1450570 - Crash in JavaScriptDialog::Close
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 29 Apr 2015 14:32:02 +0100
 
