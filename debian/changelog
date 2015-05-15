@@ -1,3 +1,13 @@
+oxide-qt (1.7.8-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.7.8
+    - Bump Chromium rev to 43.0.2357.65
+    - Fix LP: #1452407 - Shutdown abort due to BrowserContext leak
+    - Fix LP: #1449660 - Shutdown deadlock due to a race condition in
+      WebContentsUnloader
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 15 May 2015 16:21:25 +0100
+
 oxide-qt (1.7.7-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
   * Update to v1.7.7
