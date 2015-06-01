@@ -1,3 +1,30 @@
+oxide-qt (1.8.0-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.8.0
+    - Bump Chromium rev to 44.0.2403.18
+    - Fix LP: #1301419 - Add clipboard integration
+    - Fix LP: #1326070 - Add support for context menus
+    - Fix LP: #1375272 - Add WebView.webProcessStatus API so that embedders
+      can be notified of render process crashes
+    - Fix LP: #1410996 - Add WebView.mediaAccessPermissionRequested API
+    - Fix LP: #1456267 - Flush profile data before the application is suspended
+      by lifecycle management. Fixes an issue where Cut the Rope game state
+      is not saved in some cases
+    - Fix LP: #1244335 - Add LoadEvent.httpStatusCode API
+    - Fix LP: #1312260 - Add WebView.findController API for find-in-page
+      functionality
+    - Fix LP: #1408267 - Discard OTR BrowserContexts when not in use. This
+      means we now discard the in-memory profile when the browser exits private
+      browsing mode
+    - Fix LP: #1445585 - Drop workarounds for the old browser header bar
+    - Fix LP: #1446831 - Include the resources necessary for chrome://tracing/
+      to work
+    - Fix LP: #1455128 - Clear the gesture pipeline when navigating between
+      pages
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Mon, 01 Jun 2015 17:14:23 +0100
+
 oxide-qt (1.7.8-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
   * Update to v1.7.8
