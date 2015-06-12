@@ -1,3 +1,14 @@
+oxide-qt (1.8.1-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
+
+  * Update to v1.8.1
+    - Bump Chromium rev to 44.0.2403.39
+    - Fix LP: #1461600 - Remove the capture device override API from
+      MediaAccessPermissionRequest
+    - Fix LP: #1462057 - Turn Oxide.available{Audio,Video}CaptureDevices in
+      to properties
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 12 Jun 2015 15:05:24 +0100
+
 oxide-qt (1.8.0-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
   * Update to v1.8.0
