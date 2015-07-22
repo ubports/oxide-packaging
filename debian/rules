@@ -26,7 +26,7 @@ override_dh_auto_install:
 
 override_dh_install:
 	dh_install
-	dh_install -poxideqt-codecs --sourcedir=debian/tmp.free usr/lib/$(DEB_HOST_MULTIARCH)/oxide-qt/libffmpegsumo.so
+	dh_install -poxideqt-codecs --sourcedir=debian/tmp.free usr/lib/$(DEB_HOST_MULTIARCH)/oxide-qt/libffmpeg.so
 
 override_dh_strip:
 	dh_strip -pliboxideqtcore0 --dbg-package=oxideqt-dbg

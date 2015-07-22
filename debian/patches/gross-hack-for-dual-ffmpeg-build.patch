@@ -1,7 +1,7 @@
-Index: oxide-qt-1.8.0/CMakeLists.txt
+Index: oxide-qt-1.8.3/CMakeLists.txt
 ===================================================================
---- oxide-qt-1.8.0.orig/CMakeLists.txt	2015-06-01 16:53:23.000000000 +0100
-+++ oxide-qt-1.8.0/CMakeLists.txt	2015-06-01 17:02:03.807210468 +0100
+--- oxide-qt-1.8.3.orig/CMakeLists.txt	2015-05-26 21:20:53.000000000 +0100
++++ oxide-qt-1.8.3/CMakeLists.txt	2015-07-22 13:14:44.000000000 +0100
 @@ -113,7 +113,7 @@
    list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
  else()
@@ -11,11 +11,11 @@ Index: oxide-qt-1.8.0/CMakeLists.txt
  endif()
  if(DEFINED ENABLE_PLUGINS AND ENABLE_PLUGINS EQUAL 0)
    list(APPEND _GYP_COMMAND -Denable_plugins=0)
-Index: oxide-qt-1.8.0/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.8.3/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.8.0.orig/shared/renderer/oxide_content_renderer_client.cc	2015-05-26 21:20:53.000000000 +0100
-+++ oxide-qt-1.8.0/shared/renderer/oxide_content_renderer_client.cc	2015-06-01 17:00:12.411036879 +0100
-@@ -49,6 +49,13 @@
+--- oxide-qt-1.8.3.orig/shared/renderer/oxide_content_renderer_client.cc	2015-05-26 21:20:53.000000000 +0100
++++ oxide-qt-1.8.3/shared/renderer/oxide_content_renderer_client.cc	2015-07-22 17:44:47.598428310 +0100
+@@ -49,6 +49,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
  
@@ -23,13 +23,12 @@ Index: oxide-qt-1.8.0/shared/renderer/oxide_content_renderer_client.cc
 +#include "media/ffmpeg/ffmpeg_common.h"
 +#include "media/filters/ffmpeg_glue.h"
 +#include "net/base/mime_util.h"
-+#include "third_party/ffmpeg/ffmpeg_stubs.h"
 +#endif
 +
  namespace oxide {
  
  ContentRendererClient::ContentRendererClient() {}
-@@ -62,6 +69,14 @@
+@@ -62,6 +68,14 @@
    // Usually enabled only on Android. We want this on mobile, but
    // should be ok everywhere
    blink::WebRuntimeFeatures::enableOrientationEvent(true);
@@ -44,10 +43,10 @@ Index: oxide-qt-1.8.0/shared/renderer/oxide_content_renderer_client.cc
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.8.0/shared/shared.gyp
+Index: oxide-qt-1.8.3/shared/shared.gyp
 ===================================================================
---- oxide-qt-1.8.0.orig/shared/shared.gyp	2015-05-26 21:20:53.000000000 +0100
-+++ oxide-qt-1.8.0/shared/shared.gyp	2015-06-01 17:01:29.335156786 +0100
+--- oxide-qt-1.8.3.orig/shared/shared.gyp	2015-05-26 21:20:53.000000000 +0100
++++ oxide-qt-1.8.3/shared/shared.gyp	2015-07-22 13:14:44.000000000 +0100
 @@ -241,6 +241,7 @@
          '<(DEPTH)/media/media.gyp:media',
          '<(DEPTH)/net/net.gyp:net',
