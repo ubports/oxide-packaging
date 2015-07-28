@@ -1,6 +1,6 @@
-oxide-qt (1.8.3-0ubuntu0.15.04.1) vivid-security; urgency=medium
+oxide-qt (1.8.4-0ubuntu0.15.04.1) vivid-security; urgency=medium
 
-  * Update to v1.8.3 (see USN-2677-1)
+  * Update to v1.8.4 (see USN-2677-1)
     - Bump Chromium rev to 44.0.2403.89
     - Fix LP: #1301419 - Add clipboard integration
     - Fix LP: #1326070 - Add support for context menus
