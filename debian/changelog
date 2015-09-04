@@ -1,3 +1,40 @@
+oxide-qt (1.9.1-0ubuntu0.15.04.1) UNRELEASED; urgency=medium
+
+  * Update to v1.9.1 (see USN-2735-1)
+    - Bump Chromium rev to 45.0.2454.85
+    - Fix LP: #1459392 - Cannot select text with the mouse pointer
+    - Fix LP: #1337369 - Expose user agent as part of downloadRequest
+    - Fix LP: #1336611 - Gmail attachments on Touch contain an empty mime-type
+      when signaled from onDownloadRequested
+    - Fix LP: #1461600 - Refinements to media permissions API
+    - Fix LP: #1462057 - Change Oxide.available{Audio,Video}CaptureDevices() in
+      to a notifiable property
+    - Fix LP: #1428754 - Persist permission request decisions for a session
+    - Fix LP: #1464159 - Web browser should send the system language to
+      websites (Accept-Language field)
+    - Fix LP: #1445673 - Shouldn't be able to pass QObjects to
+      WebContextDelegateWorker
+    - Fix LP: #1465517 - qml-api-test::WebView_save_restore_state broken
+    - Fix LP: #1457458 - "No suitable EGL configs found" on desktop-next
+    - Fix LP: #1410753 - Implement a new API for overriding the user agent
+      string
+    - Fix LP: #1350914 - Cache override lookup's for navigator.userAgent on the
+      renderer side
+    - Fix LP: #1469139 - OxideMsg_SetUserAgent should be sent from inside
+      content::NOTIFICATION_RENDERER_PROCESS_CREATED
+    - Fix LP: #1422339 - Missing API to wire in basic access authentication
+    - Fix LP: #1453294 - Expose some classes as value types to QML
+    - Fix LP: #1178002 - Implement Do Not Track
+    - Fix LP: #1328494 - [unity7] Disable screensaver while a video is playing
+    - Fix LP: #1477760 - Crash when clicking a link in desktop G+
+    - Overhaul of the content script messaging implementation
+    - Make it possible to change devtools settings after constructing WebContext
+    - Build ffmpeg as a shared library again
+    - Load V8 natives in to the browser process so that single-process works
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 04 Sep 2015 12:35:55 +0100
+
 oxide-qt (1.8.4-0ubuntu0.15.04.1) vivid-security; urgency=medium
 
   * Update to v1.8.4 (see USN-2677-1)
