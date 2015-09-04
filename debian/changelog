@@ -1,7 +1,69 @@
-oxide-qt (1.8.4-0ubuntu0.15.04.1) vivid-security; urgency=medium
+oxide-qt (1.9.0-0ubuntu0.15.04.1~ppa2) vivid; urgency=medium
 
-  * Update to v1.8.4 (see USN-2677-1)
+  * Update to v1.9.0
+    - Bump Chromium rev to 45.0.2454.26
+    - Fix LP: #1459392 - Cannot select text with the mouse pointer
+    - Fix LP: #1337369 - Expose user agent as part of downloadRequest
+    - Fix LP: #1336611 - Gmail attachments on Touch contain an empty mime-type
+      when signaled from onDownloadRequested
+    - Fix LP: #1461600 - Refinements to media permissions API
+    - Fix LP: #1462057 - Change Oxide.available{Audio,Video}CaptureDevices() in
+      to a notifiable property
+    - Fix LP: #1428754 - Persist permission request decisions for a session
+    - Fix LP: #1464159 - Web browser should send the system language to
+      websites (Accept-Language field)
+    - Fix LP: #1445673 - Shouldn't be able to pass QObjects to
+      WebContextDelegateWorker
+    - Fix LP: #1465517 - qml-api-test::WebView_save_restore_state broken
+    - Fix LP: #1457458 - "No suitable EGL configs found" on desktop-next
+    - Fix LP: #1410753 - Implement a new API for overriding the user agent
+      string
+    - Fix LP: #1350914 - Cache override lookup's for navigator.userAgent on the
+      renderer side
+    - Fix LP: #1469139 - OxideMsg_SetUserAgent should be sent from inside
+      content::NOTIFICATION_RENDERER_PROCESS_CREATED
+    - Fix LP: #1422339 - Missing API to wire in basic access authentication
+    - Fix LP: #1453294 - Expose some classes as value types to QML
+    - Fix LP: #1178002 - Implement Do Not Track
+    - Fix LP: #1328494 - [unity7] Disable screensaver while a video is playing
+    - Fix LP: #1477760 - Crash when clicking a link in desktop G+
+    - Overhaul of the content script messaging implementation
+    - Make it possible to change devtools settings after constructing WebContext
+    - Build ffmpeg as a shared library again
+    - Load V8 natives in to the browser process so that single-process works
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Olivier Tilloy <olivier.tilloy@canonical.com>  Thu, 13 Aug 2015 11:14:47 +0200
+
+oxide-qt (1.8.3-0ubuntu0.15.04.1~ppa2) vivid; urgency=medium
+
+  * Update to v1.8.3
     - Bump Chromium rev to 44.0.2403.89
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 22 Jul 2015 13:05:27 +0100
+
+oxide-qt (1.8.2-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+
+  * Update to v1.8.2
+    - Bump Chromium rev to 44.0.2403.52
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 23 Jun 2015 16:13:09 +0100
+
+oxide-qt (1.8.1-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+
+  * Update to v1.8.1
+    - Bump Chromium rev to 44.0.2403.39
+    - Fix LP: #1461600 - Remove the capture device override API from
+      MediaAccessPermissionRequest
+    - Fix LP: #1462057 - Turn Oxide.available{Audio,Video}CaptureDevices in
+      to properties
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 12 Jun 2015 15:05:24 +0100
+
+oxide-qt (1.8.0-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+
+  * Update to v1.8.0
+    - Bump Chromium rev to 44.0.2403.18
     - Fix LP: #1301419 - Add clipboard integration
     - Fix LP: #1326070 - Add support for context menus
     - Fix LP: #1375272 - Add WebView.webProcessStatus API so that embedders
@@ -23,24 +85,44 @@ oxide-qt (1.8.4-0ubuntu0.15.04.1) vivid-security; urgency=medium
       pages
   * Refresh gross-hack-for-dual-ffmpeg-build.patch
 
- -- Chris Coulson <chris.coulson@canonical.com>  Wed, 22 Jul 2015 18:19:23 +0100
+ -- Chris Coulson <chris.coulson@canonical.com>  Mon, 01 Jun 2015 17:14:23 +0100
 
-oxide-qt (1.7.9-0ubuntu0.15.04.1) vivid-security; urgency=medium
-
-  * Update to v1.7.9
-    - see USN-2652-1
-    - Bump Chromium rev to 43.0.2357.130
-
- -- Chris Coulson <chris.coulson@canonical.com>  Tue, 23 Jun 2015 16:39:23 +0100
-
-oxide-qt (1.7.8-0ubuntu0.15.04.1) vivid-security; urgency=medium
+oxide-qt (1.7.8-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
 
   * Update to v1.7.8
-    - see USN-2610-1
     - Bump Chromium rev to 43.0.2357.65
     - Fix LP: #1452407 - Shutdown abort due to BrowserContext leak
     - Fix LP: #1449660 - Shutdown deadlock due to a race condition in
       WebContentsUnloader
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 15 May 2015 16:21:25 +0100
+
+oxide-qt (1.7.7-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+
+  * Update to v1.7.7
+    - Bump Chromium rev to 43.0.2357.45
+    - Don't use a mojo channel for the renderer IPC for now to see if it
+      fixes a renderer shutdown deadlock (hopefully fixes LP: #1442413)
+    - Fix LP: #1450021 - Crash in WebFrame::Destroy
+    - Fix LP: #1450243 - Crash in WebPopupMenu::Close
+    - Fix LP: #1450570 - Crash in JavaScriptDialog::Close
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 29 Apr 2015 14:32:02 +0100
+
+oxide-qt (1.7.4-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+
+  * Update to v1.7.4
+    - Bump Chromium rev to 43.0.2357.37
+    - Fix LP: #1449239 - Memory corruption on Arale when the visibility of a
+      webview is changed
+  * Make sure that liboxideqtquick0 is stripped correctly
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 28 Apr 2015 15:52:16 +0100
+
+oxide-qt (1.7.3-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+
+  * Update to v1.7.2
+    - Bump Chromium rev to 43.0.2357.18
     - Fix LP: #1435831 - Support EGLImage compositing path
     - Fix LP: #1435835 - Improve synchronization between webview and UI
       compositors
@@ -64,19 +146,11 @@ oxide-qt (1.7.8-0ubuntu0.15.04.1) vivid-security; urgency=medium
     - Add EGLFS QPA support
     - Fix cross-compiling armhf builds on x86
 
- -- Chris Coulson <chris.coulson@canonical.com>  Tue, 19 May 2015 17:32:04 +0100
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 21 Apr 2015 18:06:02 +0100
 
-oxide-qt (1.6.6-0ubuntu0.15.04.1) vivid-security; urgency=medium
+oxide-qt (1.6.4-0ubuntu0.15.04.2) vivid-security; urgency=medium
 
-  * Update to v1.6.6
-    - see USN-2582-1
-    - Bump Chromium rev to 42.0.2311.135
-
- -- Chris Coulson <chris.coulson@canonical.com>  Wed, 29 Apr 2015 21:06:53 +0100
-
-oxide-qt (1.6.5-0ubuntu0.15.04.1) vivid-security; urgency=medium
-
-  * Update to v1.6.5
+  * Update to v1.6.4
     - see USN-2570-1
     - Bump Chromium rev to 42.0.2311.90
     - Fix LP: #1442398 - Invalid read in CompositorOutputSurfaceGL
@@ -124,8 +198,6 @@ oxide-qt (1.6.5-0ubuntu0.15.04.1) vivid-security; urgency=medium
     - Refactor how the GL implementation is selected, simplifying the code.
       Also add OXIDE_DISABLE_GPU and OXIDE_DISABLE_GPU_COMPOSITING environment
       variables for disabling all GPU features or GPU compositing respectively
-    - Fix LP: #1446864 - OxideQQuickScriptMessage::reply doesn't work with
-      Qt 5.4
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 15 Apr 2015 12:46:56 +0100
 

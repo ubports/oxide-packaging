@@ -1,8 +1,8 @@
-Index: oxide-qt-1.8.3/CMakeLists.txt
+Index: oxide-qt-1.9.0/CMakeLists.txt
 ===================================================================
---- oxide-qt-1.8.3.orig/CMakeLists.txt	2015-05-26 21:20:53.000000000 +0100
-+++ oxide-qt-1.8.3/CMakeLists.txt	2015-07-22 13:14:44.000000000 +0100
-@@ -113,7 +113,7 @@
+--- oxide-qt-1.9.0.orig/CMakeLists.txt
++++ oxide-qt-1.9.0/CMakeLists.txt
+@@ -113,7 +113,7 @@ if(ENABLE_PROPRIETARY_CODECS)
    list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
  else()
    list(APPEND _GYP_COMMAND -Dffmpeg_branding=Chromium)
@@ -11,24 +11,24 @@ Index: oxide-qt-1.8.3/CMakeLists.txt
  endif()
  if(DEFINED ENABLE_PLUGINS AND ENABLE_PLUGINS EQUAL 0)
    list(APPEND _GYP_COMMAND -Denable_plugins=0)
-Index: oxide-qt-1.8.3/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.9.0/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.8.3.orig/shared/renderer/oxide_content_renderer_client.cc	2015-05-26 21:20:53.000000000 +0100
-+++ oxide-qt-1.8.3/shared/renderer/oxide_content_renderer_client.cc	2015-07-22 17:44:47.598428310 +0100
+--- oxide-qt-1.9.0.orig/shared/renderer/oxide_content_renderer_client.cc
++++ oxide-qt-1.9.0/shared/renderer/oxide_content_renderer_client.cc
 @@ -49,6 +49,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
  
 +#if defined(USE_PROPRIETARY_CODECS)
++#include "media/base/mime_util.h"
 +#include "media/ffmpeg/ffmpeg_common.h"
 +#include "media/filters/ffmpeg_glue.h"
-+#include "net/base/mime_util.h"
 +#endif
 +
  namespace oxide {
  
- ContentRendererClient::ContentRendererClient() {}
-@@ -62,6 +68,14 @@
+ void ContentRendererClient::RenderThreadStarted() {
+@@ -63,6 +69,14 @@ void ContentRendererClient::RenderThread
    // Usually enabled only on Android. We want this on mobile, but
    // should be ok everywhere
    blink::WebRuntimeFeatures::enableOrientationEvent(true);
@@ -37,21 +37,21 @@ Index: oxide-qt-1.8.3/shared/renderer/oxide_content_renderer_client.cc
 +  media::FFmpegGlue::InitializeFFmpeg();
 +  if (!avcodec_find_decoder(AV_CODEC_ID_H264)) {
 +    DVLOG(1) << "Proprietary codecs are not installed";
-+    net::RemoveProprietaryMediaTypesAndCodecsForTests();
++    media::RemoveProprietaryMediaTypesAndCodecsForTests();
 +  }
 +#endif
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.8.3/shared/shared.gyp
+Index: oxide-qt-1.9.0/shared/shared.gyp
 ===================================================================
---- oxide-qt-1.8.3.orig/shared/shared.gyp	2015-05-26 21:20:53.000000000 +0100
-+++ oxide-qt-1.8.3/shared/shared.gyp	2015-07-22 13:14:44.000000000 +0100
-@@ -241,6 +241,7 @@
-         '<(DEPTH)/media/media.gyp:media',
+--- oxide-qt-1.9.0.orig/shared/shared.gyp
++++ oxide-qt-1.9.0/shared/shared.gyp
+@@ -246,6 +246,7 @@
+         '<(DEPTH)/mojo/mojo_base.gyp:mojo_environment_chromium',
          '<(DEPTH)/net/net.gyp:net',
          '<(DEPTH)/skia/skia.gyp:skia',
 +        '<(DEPTH)/third_party/ffmpeg/ffmpeg.gyp:ffmpeg',
          '<(DEPTH)/third_party/khronos/khronos.gyp:khronos_headers',
          '<(DEPTH)/third_party/libXNVCtrl/libXNVCtrl.gyp:libXNVCtrl',
-         '<(DEPTH)/third_party/mojo/mojo_public.gyp:mojo_cpp_bindings',
+         '<(DEPTH)/third_party/mojo/mojo_edk.gyp:mojo_system_impl',
