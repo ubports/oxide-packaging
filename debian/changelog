@@ -1,3 +1,10 @@
+oxide-qt (1.9.2-0ubuntu0.15.04.1) UNRELEASED; urgency=medium
+
+  * Update to v1.9.2
+    - Fix LP: #1447311 - Disable the unprivileged namespace sandbox
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 10 Sep 2015 10:27:30 +0100
+
 oxide-qt (1.9.1-0ubuntu0.15.04.1) vivid-security; urgency=medium
 
   * Update to v1.9.1 (see USN-2735-1)
