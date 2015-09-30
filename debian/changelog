@@ -1,4 +1,4 @@
-oxide-qt (1.9.4-0ubuntu0.15.04.1) UNRELEASED; urgency=medium
+oxide-qt (1.9.4-0ubuntu0.15.04.1) vivid-security; urgency=medium
 
   * Update to v1.9.4 (see USN-2757-1)
     - Bump Chromium rev to 45.0.2454.101
