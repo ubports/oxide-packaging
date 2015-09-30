@@ -1,6 +1,6 @@
-oxide-qt (1.10.0-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
+oxide-qt (1.10.1-0ubuntu0.15.04.1~ppa1) UNRELEASED; urgency=medium
 
-  * Update to v1.10.0
+  * Update to v1.10.1
     - Bump Chromium rev to 46.0.2490.42
     - When calling WebView.goBack or WebView.goForward, test that the state
       of canGo{Forward,Back} is updated immediately
@@ -13,6 +13,9 @@ oxide-qt (1.10.0-0ubuntu0.15.04.1~ppa1) vivid; urgency=medium
       has been removed from Chromium now that software frames are no longer
       sent over IPC, so we implement our own classes for handling this
     - Qt 5.5 fixes
+    - Fix LP: #1498953 - Reduce the limit for discardable memory on mobile
+    - Fix LP: #1487090 - Work around content-hub issue by exposing the mime
+      type to download requests when saving an image from the context menu
   * Refresh gross-hack-for-dual-ffmpeg-build.patch
 
  -- Chris Coulson <chris.coulson@canonical.com>  Tue, 29 Sep 2015 10:13:10 +0100
