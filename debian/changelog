@@ -1,6 +1,6 @@
-oxide-qt (1.9.4-0ubuntu0.15.04.1) vivid-security; urgency=medium
+oxide-qt (1.9.5-0ubuntu0.15.04.1) vivid-security; urgency=medium
 
-  * Update to v1.9.4 (see USN-2757-1)
+  * Update to v1.9.5 (see USN-2757-1)
     - Bump Chromium rev to 45.0.2454.101
     - Fix LP: #1498953 - Reduce the limit for discardable memory on mobile
 
