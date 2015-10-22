@@ -1,4 +1,4 @@
-oxide-qt (1.11.0-0ubuntu0.15.04.1) vivid; urgency=medium
+oxide-qt (1.11.0-0ubuntu0.15.04.2) vivid; urgency=medium
 
   * Update to v1.11.0
     - Bump Chromium rev to 47.0.2526.16
@@ -22,6 +22,8 @@ oxide-qt (1.11.0-0ubuntu0.15.04.1) vivid; urgency=medium
       new-window navigations when WebView.newViewRequested isn't implemented
     - Fix LP: #1470190 - Refactor how some classes are constructed to make
       things more consistent
+  * Add build-depends on qtmultimedia5-dev, libnotify-dev and
+    libgdk-pixbuf2.0-dev
 
  -- Chris Coulson <chris.coulson@canonical.com>  Thu, 22 Oct 2015 09:32:56 +0100
 
