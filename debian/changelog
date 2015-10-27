@@ -1,3 +1,13 @@
+oxide-qt (1.11.1-0ubuntu0.15.04.1) UNRELEASED; urgency=medium
+
+  * Update to v1.11.1
+    - Bump Chromium rev to 47.0.2526.27
+    - Fix LP: #1501473 - Disable smooth scrolling to work around scrolling
+      issues
+    - Fix LP: #1505048 - Update for changes to base::RepeatingTimer
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 27 Oct 2015 16:26:38 +0000
+
 oxide-qt (1.11.0-0ubuntu0.15.04.2) vivid; urgency=medium
 
   * Update to v1.11.0
