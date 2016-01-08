@@ -1,7 +1,64 @@
-oxide-qt (1.11.2-0ubuntu0.15.04.1) UNRELEASED; urgency=medium
+oxide-qt (1.12.1-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
 
-  * Update to v1.11.2
-    - Bump Chromium rev to 47.0.2526.73
+  * Update to v1.12.1
+    - Bump Chromium rev to 48.0.2564.48
+    - Fix LP: #1441465 - Add camera implementation for phone that uses
+      the compatibility layer in Ubuntu's libhybris
+    - Fix LP: #1508972 - Can't enumerate cameras on the phone
+    - Fix LP: #1490014 - (PPAPI Flash) Implement missing PPB_Flash functions
+    - Fix LP: #1490016 - (PPAPI Flash) Implement PPB_Fullscreen
+    - Fix LP: #1490017 - (PPAPI Flash) Implement PPB_Flash_FontFile
+    - Fix LP: #1499479 - Reduce the size of the Skia font cache on mobile
+    - Fix LP: #1499775 - It's difficult to see where a link will send you
+     before clicking on it. Add WebView.hoveredUrl property
+    - Fix LP: #1504853 - Certificate errors in the browser are confusing -
+      have the WebView navigate to a placeholder transient page when the
+      browser displays the certificate error UI. This fixes several issues
+      where the addressbar and back button didn't behave consistently in some
+      cases
+    - Fix LP: #1509384 - (PPAPI Flash) Flash plugin isn't always detected
+      by BBC iPlayer. Ensure we load the plugin metadata so that
+      navigator.plugins has the correct info
+    - Fix LP: #1509433 - (PPAPI Flash) Enable the Flash plugin by default
+      when it's installed
+    - Fix LP: #1509875 - (PPAPI Flash) Browser addressbar is visible when Flash
+      content is fullscreen because LocationBarController doesn't work. Always
+      hide the addressbar in this case
+    - Fix LP: #1510508 - (PPAPI Flash) Layout and input events messed up when
+      using Flash in fullscreen. The Flash plugin expects the view size to be
+      updated synchronously when transitioning to fullscreen, so add a hack for
+      this (Chrome already does this too)
+    - Fix LP: #1510679 - (PPAPI Flash) Transitioning Flash content to
+      fullscreen sometimes shows the wrong content
+    - Fix LP: #1510949 - (PPAPI Flash) Applications cannot cancel fullscreen
+      Flash
+    - Fix LP: #1510973 - (PPAPI Flash) Ensure we cancel a fullscreen request
+      from Flash is the application doesn't grant fullscreen by setting
+      WebView.fullscreen to true
+    - Fix LP: #1517955 - Enable NEON unconditionally. Support for non-NEON
+      builds in Chromium has been broken for ages, and the default (optional
+      NEON with runtime detection) only works on Android without additional
+      patches to make the detection work on non-Android builds. Given that
+      upstream are planning enable NEON unconditionally and drop support for
+      other configurations in the future, let's just do this now as it enables
+      us to stop patching webrtc
+    - Fix LP: #1518358 - Text selection is not greyed out when the window
+      loses focus
+    - Fix LP: #1341565 - Should include plugin typeinfo (plugins.qmltypes)
+    - Fix LP: #1408109 - Remove StoragePermissionRequest. This was never
+      completed, has never been tested, isn't used anywhere and is going to
+      get in the way of site settings
+    - Fix LP: #1510503 - WebView.fullscreenRequested shouldn't fire if
+      fullscreen is already granted
+    - Fix LP: #1510506 - (PPAPI Flash) NOTIMPLEMENTED() hit in WebContentsView
+      when using Flash fullscreen
+
+  * Build-depend on libandroid-properties-dev on all architectures
+    - update debian/control
+  * Build-depend on libhybris-dev
+    - update debian/control
+  * Build with -DENABLE_HYBRIS_CAMERA=1
+    - update debian/rules
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 02 Dec 2015 22:54:32 +0000
 
