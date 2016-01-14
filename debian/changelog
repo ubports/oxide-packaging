@@ -1,7 +1,11 @@
-oxide-qt (1.12.1-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.12.3-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
 
-  * Update to v1.12.1
-    - Bump Chromium rev to 48.0.2564.48
+  * Update to v1.12.3
+    - Bump Chromium rev to 48.0.2564.79
+    - Fix LP: #1376268 - Add TouchSelectionController and
+      WebView.editingCapabilites APIs 
+    - Fix LP: #1532135 - Ensure enums for value types are actually exposed to
+      QML when building with Qt5.5
     - Fix LP: #1441465 - Add camera implementation for phone that uses
       the compatibility layer in Ubuntu's libhybris
     - Fix LP: #1508972 - Can't enumerate cameras on the phone
@@ -10,7 +14,7 @@ oxide-qt (1.12.1-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
     - Fix LP: #1490017 - (PPAPI Flash) Implement PPB_Flash_FontFile
     - Fix LP: #1499479 - Reduce the size of the Skia font cache on mobile
     - Fix LP: #1499775 - It's difficult to see where a link will send you
-     before clicking on it. Add WebView.hoveredUrl property
+      before clicking on it. Add WebView.hoveredUrl property
     - Fix LP: #1504853 - Certificate errors in the browser are confusing -
       have the WebView navigate to a placeholder transient page when the
       browser displays the certificate error UI. This fixes several issues
