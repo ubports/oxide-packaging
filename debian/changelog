@@ -1,3 +1,10 @@
+oxide-qt (1.12.5-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.12.5 (see USN-2877-1)
+    - Bump Chromium rev to 48.0.2564.82
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 21 Jan 2016 14:12:56 +0000
+
 oxide-qt (1.12.4-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.12.4
