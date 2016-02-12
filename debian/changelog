@@ -1,4 +1,31 @@
-oxide-qt (1.12.5-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+oxide-qt (1.13.2-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.13.2
+    - Fix LP: #1536797 - Issues with nested event loop handling
+    - Fix LP: #1432059 - Stop using Q_DECL_EXPORT
+    - Fix LP: #1494900 - Stop building the translation units containing public
+      classes as a separate target with different compiler options
+    - Fix LP: #1533223 - Use consistent naming of QFlags types (doesn't affect
+      the QML API)
+    - Fix LP: #1533710 - Various cleanups in soon-to-be-public headers
+    - Fix LP: #1463410 - Fold SimplePermissionRequest in to PermissionRequest
+      (doesn't affect the QML API)
+    - Add a deprecation warning for WebView.loadingChanged
+    - Install public headers and CMake package config files
+    - Be a bit more intelligent when detecting the availability of the Hybris
+      camera compatibility layer and Android EGL platform
+
+  * Add liboxideqtcore-dev and liboxideqtquick-dev packages
+    - update debian/control
+    - add debian/liboxideqtcore-dev.install
+    - add debian/liboxideqtquick-dev.install
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Add build-depends on libffi-dev
+    - update debian/control
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 09 Feb 2016 10:13:26 +0000
+
+oxide-qt (1.12.5-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.12.5 (see USN-2877-1)
     - Bump Chromium rev to 48.0.2564.82
