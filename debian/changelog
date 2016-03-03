@@ -17,6 +17,8 @@ oxide-qt (1.14.0~bzr1366-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
     - Fix LP: #1426153 - Use a single-threaded webview compositor
 
   * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Build-depend on qtfeedback5-dev
+    - update debian/control
 
  -- Chris Coulson <chris.coulson@canonical.com>  Thu, 03 Mar 2016 12:48:28 +0000
 
