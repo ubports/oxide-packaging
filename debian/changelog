@@ -1,3 +1,15 @@
+oxide-qt (1.13.5-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.13.5
+    - Bump Chromium rev to 49.0.2623.75
+
+  * Drop chromedriver build (fixes LP: #1543587)
+    - update debian/control
+    - update debian/rules
+    - remove debian/oxideqt-chromedriver.install
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Mon, 07 Mar 2016 10:51:36 +0000
+
 oxide-qt (1.13.4-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.13.4
