@@ -1,7 +1,7 @@
-oxide-qt (1.13.5-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.13.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
-  * Update to v1.13.5 (see USN-2920-1)
-    - Bump Chromium rev to 49.0.2623.75
+  * Update to v1.13.6 (see USN-2920-1)
+    - Bump Chromium rev to 49.0.2623.87
     - Fix LP: #1536797 - Issues with nested event loop handling
     - Fix LP: #1432059 - Stop using Q_DECL_EXPORT
     - Fix LP: #1494900 - Stop building the translation units containing public
