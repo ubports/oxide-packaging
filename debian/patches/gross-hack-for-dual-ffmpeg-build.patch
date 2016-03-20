@@ -1,8 +1,8 @@
-Index: oxide-qt-1.13.0/CMakeLists.txt
+Index: oxide-qt-1.14.0~bzr1366/CMakeLists.txt
 ===================================================================
---- oxide-qt-1.13.0.orig/CMakeLists.txt	2016-02-09 12:24:53.437235397 +0000
-+++ oxide-qt-1.13.0/CMakeLists.txt	2016-02-09 12:24:53.349234809 +0000
-@@ -272,7 +272,7 @@
+--- oxide-qt-1.14.0~bzr1366.orig/CMakeLists.txt	2016-03-03 11:02:44.007915273 +0000
++++ oxide-qt-1.14.0~bzr1366/CMakeLists.txt	2016-03-03 11:02:43.955914949 +0000
+@@ -255,7 +255,7 @@
    list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
  else()
    list(APPEND _GYP_COMMAND -Dffmpeg_branding=Chromium)
@@ -11,10 +11,10 @@ Index: oxide-qt-1.13.0/CMakeLists.txt
  endif()
  if(ENABLE_PLUGINS)
    list(APPEND _GYP_COMMAND -Denable_plugins=1)
-Index: oxide-qt-1.13.0/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.14.0~bzr1366/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.13.0.orig/shared/renderer/oxide_content_renderer_client.cc	2016-02-09 12:24:53.437235397 +0000
-+++ oxide-qt-1.13.0/shared/renderer/oxide_content_renderer_client.cc	2016-02-09 12:24:53.349234809 +0000
+--- oxide-qt-1.14.0~bzr1366.orig/shared/renderer/oxide_content_renderer_client.cc	2016-03-03 11:02:44.007915273 +0000
++++ oxide-qt-1.14.0~bzr1366/shared/renderer/oxide_content_renderer_client.cc	2016-03-03 11:02:43.955914949 +0000
 @@ -55,6 +55,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
@@ -43,15 +43,15 @@ Index: oxide-qt-1.13.0/shared/renderer/oxide_content_renderer_client.cc
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.13.0/shared/shared.gyp
+Index: oxide-qt-1.14.0~bzr1366/shared/shared.gyp
 ===================================================================
---- oxide-qt-1.13.0.orig/shared/shared.gyp	2016-02-09 12:24:53.437235397 +0000
-+++ oxide-qt-1.13.0/shared/shared.gyp	2016-02-09 12:24:53.353234836 +0000
-@@ -247,6 +247,7 @@
-         '<(DEPTH)/mojo/mojo_base.gyp:mojo_environment_chromium',
+--- oxide-qt-1.14.0~bzr1366.orig/shared/shared.gyp	2016-03-03 11:02:44.007915273 +0000
++++ oxide-qt-1.14.0~bzr1366/shared/shared.gyp	2016-03-03 11:02:43.955914949 +0000
+@@ -250,6 +250,7 @@
+         '<(DEPTH)/mojo/mojo_public.gyp:mojo_cpp_bindings',
          '<(DEPTH)/net/net.gyp:net',
          '<(DEPTH)/skia/skia.gyp:skia',
 +        '<(DEPTH)/third_party/ffmpeg/ffmpeg.gyp:ffmpeg',
          '<(DEPTH)/third_party/khronos/khronos.gyp:khronos_headers',
          '<(DEPTH)/third_party/libXNVCtrl/libXNVCtrl.gyp:libXNVCtrl',
-         '<(DEPTH)/third_party/mojo/mojo_edk.gyp:mojo_system_impl',
+         '<(DEPTH)/third_party/re2/re2.gyp:re2',
