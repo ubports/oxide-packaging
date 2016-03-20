@@ -41,7 +41,6 @@ Build-Depends: debhelper (>= 8.0.0),
     xvfb,
     qtdeclarative5-qtquick2-plugin,
     qtdeclarative5-test-plugin,
-    libcups2-dev,
     libexif-dev,
     libxcursor-dev,
     libxrandr-dev,
@@ -192,12 +191,10 @@ Description: Web browser engine for Qt (Debug symbols)
 Package: oxideqt-chromedriver
 Architecture: any
 Section: misc
-Depends: ${misc:Depends},
-    liboxideqtcore0 (= ${binary:Version})
-Description: Web browser engine for Qt (chromedriver build)
+Depends: ${misc:Depends}
+Description: Web browser engine for Qt (transitional package)
  Oxide is a web browser engine library based on Chromium that makes it easy to
  embed web content in your Qt application
  .
- This package provides the chromedriver binary that can be used
- as a WebDriver proxy to drive oxide with Selenium or any WebDriver
- based client.
+ This is a transitional package to make upgrades work correctly, and can be
+ safely removed

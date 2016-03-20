@@ -1,3 +1,24 @@
+oxide-qt (1.15.0~bzr1382-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.15.0~bzr1382
+    - Bump Chromium rev to 51.0.2679.0
+    - Fix LP: #1552161 - Make scroll / pinch gestures smoother on high-DPI
+      screens
+    - Fix LP: #1556323 - Fix SIGSEGV in oxide::InputMethodContext::SetImeBridge
+    - Fix LP: #1545684 - Remove Oxide DetachFromClient hack from cc
+    - Fix LP: #1543587 - Duplicate targets and random mis-builds due to
+      Chromedriver
+    - Fix LP: #1555122 - Startup crash when running in a VM
+    - Fix LP: #1552825 - WebView.touchSelectionController.active remains true
+      when navigating away
+
+  * Drop chromedriver build (fixes LP: #1543587)
+    - update debian/control
+    - update debian/rules
+    - remove debian/oxideqt-chromedriver.install
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Sun, 20 Mar 2016 11:22:14 +0000
+
 oxide-qt (1.14.0~bzr1366-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.14.0~bzr1366
