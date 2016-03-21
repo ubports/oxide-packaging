@@ -1,4 +1,4 @@
-oxide-qt (1.14.1-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+oxide-qt (1.14.1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.14.1
     - Fix LP: #1558792 - Ensure the browser compositor size is updated when
