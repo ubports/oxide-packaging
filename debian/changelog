@@ -1,3 +1,11 @@
+oxide-qt (1.13.7-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.13.7
+    - Fix LP: #1558792 - Ensure the browser compositor size is updated when
+      the screen geometry changes in fullscreen
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Mon, 21 Mar 2016 11:49:55 +0000
+
 oxide-qt (1.13.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.13.6 (see USN-2920-1)
