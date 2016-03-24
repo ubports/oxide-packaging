@@ -1,3 +1,15 @@
+oxide-qt (1.14.2-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.14.2
+    - Bump Chromium rev to 50.0.2661.49
+    - Various media-hub build fixes
+    - Revert "Make net::CookieStore access single threaded"
+    - Fix LP: #1560034 - Do not show the insertion handle on a tap for an
+      empty editable text
+    - Fix LP: #1559428 - Crash when requesting location updates
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 24 Mar 2016 18:08:55 +0000
+
 oxide-qt (1.14.1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.14.1
