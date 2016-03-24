@@ -1,3 +1,10 @@
+oxide-qt (1.13.9-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.13.9 (see USN-2940-1)
+    - Fix LP: #1559428 - Crash when requesting location updates
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 24 Mar 2016 13:18:31 +0000
+
 oxide-qt (1.13.8-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.13.8
