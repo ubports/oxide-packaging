@@ -1,3 +1,26 @@
+oxide-qt (1.15.0~bzr1402-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.15.0~bzr1402
+    - Bump Chromium rev to 51.0.2693.0
+    - Fix LP: #1558792 - Ensure the browser compositor size is updated when
+      the screen geometry changes in fullscreen
+    - Various media-hub build fixes
+    - Fix LP: #1560034 - Do not show the insertion handle on a tap for an
+      empty editable text
+    - Touch selection API updates
+    - Add CookieStoreUIProxy, which is an implementation of net::CookieStore
+      that proxies calls from the UI thread to the real cookie store on the IO
+      thread
+    - Fix LP: #1559428 - Crash when requesting location updates
+    - Fix a shutdown abort in single process mode
+    - Various updates to the way that QML tests are executed
+    - Fix flakiness in tst_bug1324909.qml
+    - Fix LP: #1399207 - make it possible to skip entire test cases under
+      certain test configurations where they are not applicable (eg, single
+      process)
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 31 Mar 2016 15:44:19 +0100
+
 oxide-qt (1.15.0~bzr1382-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.0~bzr1382
