@@ -1,3 +1,25 @@
+oxide-qt (1.15.0~bzr1441-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.15.0 snapshot (r1441)
+    - Bump Chromium rev to 51.0.2704.4
+    - Get rid of CompositorProxy and its implementation - this was only really
+      required when we used a threaded compositor
+    - Fix LP: #1570019 - Handle null callbacks in CookieStoreUIProxy
+    - Remove RendererFrameEvictor - it's redundant anyway because we destroy
+      the webview compositor when it's hidden. Now we just drive eviction from
+      the webview compositor. This removes a bogus dependency on
+      GetFormFactorHint (LP: #1510603)
+    - Hide surface_id from Compositor clients
+    - Fix LP: #1498200 - Put shared/ and qt/core/ in to separate components
+    - Drop the warning when changing the process model - single-process is
+      now a supported configuration
+    - Lots of QML test fixes to enable them to work in single-process mode
+    - Disable profiler timing - we don't have chrome://profiler/, and this
+      is disabled by default on Chrome/Android too (apparently this was adding
+      a 900ns overhead for every task on Android)
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 14 Apr 2016 17:51:07 +0100
+
 oxide-qt (1.15.0~bzr1402-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.0~bzr1402
