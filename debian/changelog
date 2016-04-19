@@ -1,3 +1,36 @@
+oxide-qt (1.14.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+
+  * Update to v1.14.6
+    - Bump Chromium rev to 50.0.2661.75
+    - Fix LP: #1543761 - Move fullscreen logic out of oxide::WebView
+    - Fix LP: #1542119 - Rip input handling and compositing glue out of
+      oxide::WebView
+    - Fix LP: #1548996 - Fix device scaling mess
+    - Fix LP: #1459830 - Support drag and drop
+    - Fix LP: #1440863 - Support navigator.vibrate()
+    - Fix LP: #1552376 - Ensure we disable the use of the share context on
+      drivers where Chromium uses virtualized GL contexts
+    - Fix LP: #1520537 - webbrowser-app crashes after 1 sec on unity8
+    - Fix LP: #1459395 - Triple click doesn't work
+    - Fix LP: #1459362 - SwipeArea lets touch events through before a drag is
+      detected
+    - Fix LP: #1426153 - Use a single-threaded webview compositor
+    - Fix LP: #1543587 - Duplicate targets and random mis-builds due to
+      Chromedriver
+    - Fix LP: #1555122 - Startup crash when running in a VM
+    - Fix LP: #1552825 - WebView.touchSelectionController.active remains true
+      when navigating away
+    - Fix LP: #1556323 - Fix SIGSEGV in oxide::InputMethodContext::SetImeBridge
+    - Add support for scale factor retrieved from the Ubuntu QPA plugin
+    - Switch from DelegatedRendererLayer to SurfaceLayer in
+      RenderWidgetHostView, as the former has been deleted from Chromium
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Build-depend on qtfeedback5-dev
+    - update debian/control
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 19 Apr 2016 17:56:58 +0100
+
 oxide-qt (1.13.9-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.13.9 (see USN-2940-1)
