@@ -1,7 +1,9 @@
-oxide-qt (1.14.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.14.7-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
-  * Update to v1.14.6
-    - Bump Chromium rev to 50.0.2661.75
+  * Update to v1.14.7
+    - Bump Chromium rev to 50.0.2661.87
+    - Fix LP: #1565685 - Gracefully handle the case where
+      glGetString(GL_SHADING_LANGUAGE_VERSION) returns a null pointer
     - Fix LP: #1543761 - Move fullscreen logic out of oxide::WebView
     - Fix LP: #1542119 - Rip input handling and compositing glue out of
       oxide::WebView
