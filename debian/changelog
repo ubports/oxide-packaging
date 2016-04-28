@@ -1,3 +1,32 @@
+oxide-qt (1.16.0~bzr1459-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.16.0 snapshot (r1459)
+    - Bump Chromium rev to 52.0.2716.0
+    - Fix LP: #1575216 - Ensure we resize / rescale the webview compositor
+      viewport when the screen is updated
+    - Fix LP: #1556658 - Provide dummy message text to an application's custom
+      beforeunload dialog component for compatibility purposes, now that
+      Chromium ignores the one provided by the page
+    - Fix LP: #1535818 - Add support for the deviceId constraint in getUserMedia
+    - Fix LP: #1568860 - Replace use of scoped_ptr with std::unique_ptr
+    - Replace CertificateErrorDispatcherClient with a callback, and add through
+      unit tests for CertificateErrorDispatcher in the process
+    - Fix LP: #1565685 - Gracefully handle the case where
+      glGetString(GL_SHADING_LANGUAGE_VERSION) returns a null pointer
+    - Add the ability to run unit tests on internal classes in shared/
+    - Fix LP: #1447395 - Add WebView.zoomFactor API
+    - Fix LP: #1565063 - Add 'version' and 'chromiumVersion' properties to
+      the API
+    - Fix LP: #1399207 - Make it possible to skip entire QML test cases where
+      they aren't relevant for specific configurations (eg, single process)
+    - Fix LP: #1462814 - Drop failing test which appears to not be useful
+      anymore
+    - Fix LP: #1556762 - Add TouchSelectionController.handleDragInProgress
+      property
+    - Fix LP: #1556764 - Add TouchSelectionController.hide() API
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 28 Apr 2016 11:20:09 +0100
+
 oxide-qt (1.15.0~bzr1441-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.0 snapshot (r1441)
