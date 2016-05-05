@@ -1,3 +1,13 @@
+oxide-qt (1.15.1-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.15.1
+    - Bump Chromium rev to 51.0.2704.36
+    - Scale the locationbar height when the screen changes
+    - Fix LP: #1576164 - Internationalize the camera names
+    - Fix media-hub build
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 05 May 2016 14:06:17 +0100
+
 oxide-qt (1.15.0-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.0
