@@ -1,3 +1,10 @@
+oxide-qt (1.15.2-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.15.2
+    - Fix LP: #1578808 - link failure on armhf
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 10 May 2016 13:54:48 +0100
+
 oxide-qt (1.15.1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.1
