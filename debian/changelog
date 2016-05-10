@@ -1,3 +1,18 @@
+oxide-qt (1.16.0~bzr1469-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.16.0 snapshot (r1469)
+    - Scale the locationbar height when the screen changes
+    - Fix LP: #1576164 - Internationalize the camera names
+    - Fix media-hub build
+    - Decouple SecurityStatus from WebView, and add extensive unit tests for
+      this code
+    - Add simple unit tests for SSLHostStateDelegate
+    - Use proper cmake variables for imported libraries rather than using the
+      names directly
+    - Fix LP: #1578808 - link failure on armhf
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 10 May 2016 15:21:33 +0100
+
 oxide-qt (1.16.0~bzr1459-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.16.0 snapshot (r1459)
