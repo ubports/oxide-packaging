@@ -1,3 +1,13 @@
+oxide-qt (1.15.4-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.15.4
+    - Bump Chromium rev to 51.0.2704.54
+    - Fix LP: #1560432 - LocationBarController responds to wheel gestures
+    - Fix LP: #1582060 - Ensure we attach the InputMethodContext for script
+      opened webviews
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 20 May 2016 15:40:47 +0100
+
 oxide-qt (1.15.3-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.3
