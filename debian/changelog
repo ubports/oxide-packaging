@@ -1,3 +1,19 @@
+oxide-qt (1.15.6-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.15.6
+    - Bump Chromium rev to 51.0.2704.63
+    - Fix LP: #1569315 - Make WebView::EditingCapabilitiesChanged faster to
+      avoid serious performance issues with an active selection
+    - Disable plugins by default on arm, as we only support Flash which isn't
+      available there
+    - Compile native arm and x86 builds with -g1 to reduce the size of the
+      resulting unstripped binary and hopefully ease address space pressure
+      during linking. This will reduce the usefulness of crash reports on
+      these platforms
+    - Unbreak the !ENABLE_PLUGINS build
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 26 May 2016 17:44:55 +0100
+
 oxide-qt (1.15.4-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.15.4
