@@ -1,3 +1,69 @@
+oxide-qt (1.15.7-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.15.7 (see USN-2992-1)
+    - Bump Chromium rev to 51.0.2704.79
+    - Fix LP: #1567542 - Ensure the camera image is rotated correctly for both
+      front and back cameras, and fix a krillin-specific issue
+    - Fix LP: #1570511 / LP: #1586968 - Allow touch selection to short circuit
+      context menu requests
+    - Fix LP: #1569315 - Make WebView::EditingCapabilitiesChanged faster to
+      avoid serious performance issues with an active selection
+    - Disable plugins by default on arm, as we only support Flash which isn't
+      available there
+    - Compile native arm and x86 builds with -g1 to reduce the size of the
+      resulting unstripped binary and hopefully ease address space pressure
+      during linking. This will reduce the usefulness of crash reports on
+      these platforms
+    - Unbreak the !ENABLE_PLUGINS build
+    - Fix LP: #1582060 - Ensure we attach the InputMethodContext for script
+      opened webviews
+    - Fix LP: #1578808 - link failure on armhf
+    - Fix LP: #1576164 - Internationalize the camera names
+    - Fix LP: #1556658 - Provide dummy message text to an application's custom
+      beforeunload dialog component for compatibility purposes, now that
+      Chromium ignores the one provided by the page
+    - Fix LP: #1535818 - Add support for the deviceId constraint in getUserMedia
+    - Fix LP: #1568860 - Replace use of scoped_ptr with std::unique_ptr
+    - Replace CertificateErrorDispatcherClient with a callback, and add through
+      unit tests for CertificateErrorDispatcher in the process
+    - Add the ability to run unit tests on internal classes in shared/
+    - Fix LP: #1447395 - Add WebView.zoomFactor API
+    - Fix LP: #1565063 - Add 'version' and 'chromiumVersion' properties to
+      the API
+    - Remove CompositorProxy and its implementation. This was left over from
+      when the webview compositor wasn't single threaded
+    - Remove RendererFrameEvictor - it's redundant anyway because we destroy
+      the webview compositor when it's hidden. Now we just drive eviction from
+      there instead. This removes a bogus dependency on GetFormFactorHint
+    - Hide surface_id from compositor clients, cleaning up the client interface
+    - Fix LP: #1498200 - Componentize qt/core/ and shared/. This allows us to
+      build unit test binaries that depend on shared/
+    - Drop the warning when changing the process model - single process is
+      now supported.
+    - Adapt the QML tests to run in single-process and make lots of test fixes
+      (LP: #1399208)
+    - Fix LP: #1399207 - Make it possible to skip entire QML test cases where
+      they aren't relevant for specific configurations (eg, single process)
+    - Fix LP: #1462814 - Drop failing test which appears to not be useful
+      anymore
+    - Disable profiler timing - we don't have chrome://profiler/, and this is
+      disabled by default on Chrome/Android too due to it having a
+      non-negligible performance impact.
+    - Fix a shutdown abort in single-process mode
+    - Add CookieStoreUIProxy, which is an implementation of net::CookieStore
+      that proxies calls from the UI thread to the real cookie store on the IO
+      thread. This is used in a couple of places where we need access to the
+      cookie store on the UI thread
+    - Fix LP: #1556762 - Add TouchSelectionController.handleDragInProgress
+      property
+    - Fix LP: #1556764 - Add TouchSelectionController.hide() API
+    - Fix LP: #1552161 - Convert QTouchEvent directly to ui::MotionEvent.
+      Dropping the use of ui::TouchEvent means we no longer have to round
+      the scroll coordinates, which should improve smoothness on high-DPI
+      screens
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 02 Jun 2016 20:39:07 +0100
+
 oxide-qt (1.14.8-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.14.8
