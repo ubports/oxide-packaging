@@ -1,3 +1,15 @@
+oxide-qt (1.16.0~git1464875709.f450b29-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.16.0 snapshot (f450b29)
+    - Bump Chromium rev to 52.0.2743.19
+    - Fix LP: #1567542 - Ensure the camera image is rotated correctly for both
+      front and back cameras, and fix a krillin-specific issue
+    - Fix LP: #1570511 / LP: #1586968 - Allow touch selection to short circuit
+      context menu requests
+    - Unbreak the !ENABLE_PLUGINS build
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 02 Jun 2016 18:18:43 +0100
+
 oxide-qt (1.16.0~git1464216100.ba65b21-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.16.0 snapshot (ba65b21)
