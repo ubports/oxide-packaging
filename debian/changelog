@@ -1,3 +1,18 @@
+oxide-qt (1.17.0~git1465891398.c627e55-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.17.0 snapshot (c627e55)
+    - Bump Chromium rev to 53.0.2763.0
+    - Fix LP: #1326697 - Preliminary support for building with GN
+    - Fix LP: #1588217 - Cross-compiling support with GN
+    - Fix LP: #1588942 - Support for bootstrapping a GN binary
+    - Fix LP: #1582638 - Initial build support for AArch64
+    - Fix non-ENABLE_HYBRIS build
+    - Fix LP: #1592296 - Support filenames in drag and drop
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 14 Jun 2016 14:25:03 +0300
+
 oxide-qt (1.16.0~git1464875709.f450b29-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.16.0 snapshot (f450b29)
