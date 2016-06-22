@@ -1,3 +1,31 @@
+oxide-qt (1.17.0~git1466593237.50338f1-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.17.0 snapshot (50338f1)
+    - Bump Chromium rev to 53.0.2767.0
+    - Fix LP: #1590776 - Hide the insertion handle on input events
+    - Fix LP: #1585291 - Add copy image support to the context menu
+    - Fix LP: #1593232 - Fix navigator.vibrate regression and add tests for this
+    - Ensure that our device::VibtationManager implementation sanitizes
+      arguments properly
+    - Fix LP: #1595136 - Compile the core library with -g1 on hosts with less
+      than 8GB of RAM
+    - Fix LP: #1594941 - Fix static ENABLE_PLUGINS=0 GN build
+    - Fix LP: #1594962 - Disable gn check step for now
+
+  * Build with USE_GN=1, BOOTSTRAP_GN=1
+    - update debian/rules
+  * Build with ENABLE_HYBRIS=0 on arm64
+    - update debian/rules
+  * Don't build-depend on libhybris on arm64
+    - update debian/control
+  * locales/ has been renamed to chromium_l10n
+    - update debian/liboxideqtcore0.install
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Build depend on python-psutil
+    - update debian/control
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 22 Jun 2016 18:27:30 +0100
+
 oxide-qt (1.17.0~git1465891398.c627e55-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.0 snapshot (c627e55)

@@ -46,8 +46,9 @@ Build-Depends: debhelper (>= 8.0.0),
     libxrandr-dev,
     libxtst-dev,
     libmedia-hub-dev [armhf],
-    libandroid-properties-dev,
-    libhybris-dev,
+    libandroid-properties-dev [!arm64],
+    libhybris-dev [!arm64],
+    python-psutil,
     libffi-dev
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/oxide

@@ -1,7 +1,7 @@
-Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.17.0~git1466457382.514eda5/oxide/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.17.0~git1465891398.c627e55.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
-+++ oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/renderer/oxide_content_renderer_client.cc
+--- oxide-qt-1.17.0~git1466457382.514eda5.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
++++ oxide-qt-1.17.0~git1466457382.514eda5/oxide/shared/renderer/oxide_content_renderer_client.cc
 @@ -56,6 +56,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
@@ -30,10 +30,10 @@ Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/renderer/oxide_content
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/shared.gyp
+Index: oxide-qt-1.17.0~git1466457382.514eda5/oxide/shared/shared.gyp
 ===================================================================
---- oxide-qt-1.17.0~git1465891398.c627e55.orig/oxide/shared/shared.gyp
-+++ oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/shared.gyp
+--- oxide-qt-1.17.0~git1466457382.514eda5.orig/oxide/shared/shared.gyp
++++ oxide-qt-1.17.0~git1466457382.514eda5/oxide/shared/shared.gyp
 @@ -252,6 +252,7 @@
          '<(DEPTH)/mojo/mojo_public.gyp:mojo_cpp_bindings',
          '<(DEPTH)/net/net.gyp:net',
@@ -42,11 +42,11 @@ Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/shared.gyp
          '<(DEPTH)/third_party/khronos/khronos.gyp:khronos_headers',
          '<(DEPTH)/third_party/libXNVCtrl/libXNVCtrl.gyp:libXNVCtrl',
          '<(DEPTH)/third_party/re2/re2.gyp:re2',
-Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/CMakeLists.txt
+Index: oxide-qt-1.17.0~git1466457382.514eda5/oxide/CMakeLists.txt
 ===================================================================
---- oxide-qt-1.17.0~git1465891398.c627e55.orig/oxide/CMakeLists.txt
-+++ oxide-qt-1.17.0~git1465891398.c627e55/oxide/CMakeLists.txt
-@@ -250,7 +250,7 @@ else()
+--- oxide-qt-1.17.0~git1466457382.514eda5.orig/oxide/CMakeLists.txt
++++ oxide-qt-1.17.0~git1466457382.514eda5/oxide/CMakeLists.txt
+@@ -251,7 +251,7 @@ else()
      list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
    else()
      list(APPEND _GYP_COMMAND -Dffmpeg_branding=Chromium)
@@ -55,11 +55,11 @@ Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/CMakeLists.txt
    endif()
    if(ENABLE_PLUGINS)
      list(APPEND _GYP_COMMAND -Denable_plugins=1)
-Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/build/cmake/ChromiumBuildShim.cmake
+Index: oxide-qt-1.17.0~git1466457382.514eda5/oxide/build/cmake/ChromiumBuildShim.cmake
 ===================================================================
---- oxide-qt-1.17.0~git1465891398.c627e55.orig/oxide/build/cmake/ChromiumBuildShim.cmake
-+++ oxide-qt-1.17.0~git1465891398.c627e55/oxide/build/cmake/ChromiumBuildShim.cmake
-@@ -182,7 +182,7 @@ function(run_generate_ninja)
+--- oxide-qt-1.17.0~git1466457382.514eda5.orig/oxide/build/cmake/ChromiumBuildShim.cmake
++++ oxide-qt-1.17.0~git1466457382.514eda5/oxide/build/cmake/ChromiumBuildShim.cmake
+@@ -210,7 +210,7 @@ function(run_generate_ninja)
      list(APPEND MAKE_GN_ARGS_CMD -Dproprietary_codecs=true)
    else()
      list(APPEND MAKE_GN_ARGS_CMD -Dffmpeg_branding=Chromium)
@@ -68,14 +68,14 @@ Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/build/cmake/ChromiumBuildShim
    endif()
  
    if(ENABLE_PLUGINS)
-Index: oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/BUILD.gn
+Index: oxide-qt-1.17.0~git1466457382.514eda5/oxide/shared/BUILD.gn
 ===================================================================
---- oxide-qt-1.17.0~git1465891398.c627e55.orig/oxide/shared/BUILD.gn
-+++ oxide-qt-1.17.0~git1465891398.c627e55/oxide/shared/BUILD.gn
-@@ -181,6 +181,7 @@ component("shared") {
-     "//mojo/edk/system",
+--- oxide-qt-1.17.0~git1466457382.514eda5.orig/oxide/shared/BUILD.gn
++++ oxide-qt-1.17.0~git1466457382.514eda5/oxide/shared/BUILD.gn
+@@ -189,6 +189,7 @@ component("shared") {
      "//net",
      "//skia",
+     "//storage/common",
 +    "//third_party/ffmpeg",
      "//third_party/libXNVCtrl",
      "//third_party/WebKit/public:blink",
