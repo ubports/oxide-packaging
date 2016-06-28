@@ -1,6 +1,9 @@
 oxide-qt (1.17.0~git1466593237.50338f1-0ubuntu0.15.04.2~overlay1~ppa) UNRELEASED; urgency=medium
 
   * Explicitly list the supported architectures in debian/control
+  * Remove arm64 specific parts - we're not supporting that on wily
+    - update debian/control
+    - update debian/rules
 
  -- Chris Coulson <chris.coulson@canonical.com>  Tue, 28 Jun 2016 18:54:55 +0100
 
