@@ -46,15 +46,15 @@ Build-Depends: debhelper (>= 8.0.0),
     libxrandr-dev,
     libxtst-dev,
     libmedia-hub-dev [armhf],
-    libandroid-properties-dev [!arm64],
-    libhybris-dev [!arm64],
+    libandroid-properties-dev,
+    libhybris-dev,
     python-psutil,
     libffi-dev
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/oxide
 
 Package: liboxideqtcore0
-Architecture: any
+Architecture: amd64 i386 armhf
 Multi-Arch: same
 Depends: ${shlibs:Depends},
     ${misc:Depends},
@@ -67,7 +67,7 @@ Description: Web browser engine for Qt (core library and components)
  files required to run applications with Oxide
 
 Package: liboxideqtcore-dev
-Architecture: any
+Architecture: amd64 i386 armhf
 Section: libdevel
 Depends: ${shlibs:Depends},
     ${misc:Depends},
@@ -80,7 +80,7 @@ Description: Web browser engine for Qt (development files for core library)
  against the Oxide core library
 
 Package: liboxideqtquick0
-Architecture: any
+Architecture: amd64 i386 armhf
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
     liboxideqtcore0 (= ${binary:Version}),
@@ -93,7 +93,7 @@ Description: Web browser engine for Qt (QtQuick library)
  with Oxide
 
 Package: liboxideqtquick-dev
-Architecture: any
+Architecture: amd64 i386 armhf
 Section: libdevel
 Depends: ${shlibs:Depends},
     ${misc:Depends},
@@ -106,7 +106,7 @@ Description: Web browser engine for Qt (development files for QtQuick library)
  against the Oxide QtQuick library
 
 Package: liboxideqt-qmlplugin
-Architecture: any
+Architecture: amd64 i386 armhf
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
     liboxideqtcore0 (= ${binary:Version}),
@@ -119,7 +119,7 @@ Description: Web browser engine for Qt (QML plugin)
  Oxide
 
 Package: oxideqt-dbg
-Architecture: any
+Architecture: amd64 i386 armhf
 Section: debug
 Depends: ${misc:Depends},
     liboxideqtcore0 (= ${binary:Version}),
@@ -132,7 +132,7 @@ Description: Web browser engine for Qt (Debug symbols)
  This package provides the debugging symbols for Oxide
 
 Package: oxideqt-codecs
-Architecture: any
+Architecture: amd64 i386 armhf
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: oxideqt-codecs-extra
@@ -147,7 +147,7 @@ Description: Web browser engine for Qt (codecs)
  codecs
 
 Package: oxideqt-codecs-dbg
-Architecture: any
+Architecture: amd64 i386 armhf
 Section: debug
 Depends: ${misc:Depends},
     oxideqt-codecs (= ${binary:Version})
@@ -161,7 +161,7 @@ Description: Web browser engine for Qt (Debug symbols)
  This package provides the debugging symbols for Oxide
 
 Package: oxideqt-codecs-extra
-Architecture: any
+Architecture: amd64 i386 armhf
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: oxideqt-codecs
@@ -176,7 +176,7 @@ Description: Web browser engine for Qt (codecs)
  and H.264 codecs
 
 Package: oxideqt-codecs-extra-dbg
-Architecture: any
+Architecture: amd64 i386 armhf
 Section: debug
 Depends: ${misc:Depends},
     oxideqt-codecs-extra (= ${binary:Version})
@@ -190,7 +190,7 @@ Description: Web browser engine for Qt (Debug symbols)
  This package provides the debugging symbols for Oxide
 
 Package: oxideqt-chromedriver
-Architecture: any
+Architecture: amd64 i386 armhf
 Section: misc
 Depends: ${misc:Depends}
 Description: Web browser engine for Qt (transitional package)
