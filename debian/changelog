@@ -1,4 +1,27 @@
-oxide-qt (1.17.0~git1467144358.fb4988f-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+oxide-qt (1.17.0~git1467998257.c2676be-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.17.0 snapshot (c2676be)
+    - Bump Chromium rev to 53.0.2785.8
+    - Fix LP: #1599236 - ensure GN builds are built with Pango support
+    - Fix LP: #1588219 - fix mediahub GN build
+    - Fix LP: #1592020 - Make oxide_shared_unittests / oxide_qt_unittests work
+      with the GN build
+    - MouseEvents must be used to generate synthetic click events in tests
+    - Fix LP: #1597262 - Only enable plugin support on x86 / x86-64
+    - Fix LP: #1560271 - Refactor CookieStoreProxy and ensure that the cookie
+      store is created on the IO thread
+    - Fix Compositor DCHECK
+    - Call BrowserPlatformIntegration::GetNativeDisplay later to avoid a DCHECK
+    - Fix LP: #1510603 - Stop using GetFormFactorHint for memory optimizations
+    - Fix LP: #1595320 - Ensure GN builds are linked without --fatal-warnings
+    - Make the renderer executable use Chromium's new allocator shim, which
+      means we get an infallible allocator on AArch64, even without TCMalloc
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 08 Jul 2016 20:59:48 +0100
+
+oxide-qt (1.17.0~git1467144358.fb4988f-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.0 snapshot (fb4988f)
     - Bump Chromium rev to 53.0.2774.0
