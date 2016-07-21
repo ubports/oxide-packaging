@@ -1,3 +1,31 @@
+oxide-qt (1.16.5-0ubuntu0.15.04.1~overlay) UNRELEASED; urgency=medium
+
+  * Update to v1.16.5 (see USN-3041-1)
+    - Bump Chromium rev to 52.0.2743.82
+    - Remove WebSettings::setTouchEditingEnabled customization from Blink -
+      it's not used anymore
+    - Make checkouts a bit faster by disabling unnecessary gclient hooks
+    - Use QWheelEvent::pixelDelta where possible
+    - Refactor clipboard support and add a ClipboardObserver class
+    - WebContentsView should guard various calls from RWHV to ensure they're
+      associated with the currently displayed view
+    - Ensure we correctly restore RenderWidget state when switching between
+      interstitial / fullscreen views
+    - Disable allocator shim
+    - Refactor how select popups are implemented, so we rely on a less
+      intrusive change to Chromium
+    - Fix LP: #1532910 - Stop using deprecated V8 APIs
+    - Decouple SecurityStatus from WebView, and add extensive unit tests for
+      this code
+    - Add simple unit tests for SSLHostStateDelegate
+    - Use proper cmake variables for imported libraries rather than using the
+      names directly
+    - Fix LP: #1590776 - Hide the insertion handle on input events
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 21 Jul 2016 18:09:38 +0100
+
 oxide-qt (1.15.7-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.15.7 (see USN-2992-1)

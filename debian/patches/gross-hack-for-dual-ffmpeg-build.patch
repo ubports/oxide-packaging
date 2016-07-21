@@ -1,8 +1,8 @@
-Index: oxide-qt-1.14.0~bzr1366/CMakeLists.txt
+Index: oxide-qt-1.16.0~git1463506074.7f69146/oxide/CMakeLists.txt
 ===================================================================
---- oxide-qt-1.14.0~bzr1366.orig/CMakeLists.txt	2016-03-03 11:02:44.007915273 +0000
-+++ oxide-qt-1.14.0~bzr1366/CMakeLists.txt	2016-03-03 11:02:43.955914949 +0000
-@@ -255,7 +255,7 @@
+--- oxide-qt-1.16.0~git1463506074.7f69146.orig/oxide/CMakeLists.txt
++++ oxide-qt-1.16.0~git1463506074.7f69146/oxide/CMakeLists.txt
+@@ -245,7 +245,7 @@ if(ENABLE_PROPRIETARY_CODECS)
    list(APPEND _GYP_COMMAND -Dproprietary_codecs=1)
  else()
    list(APPEND _GYP_COMMAND -Dffmpeg_branding=Chromium)
@@ -11,11 +11,11 @@ Index: oxide-qt-1.14.0~bzr1366/CMakeLists.txt
  endif()
  if(ENABLE_PLUGINS)
    list(APPEND _GYP_COMMAND -Denable_plugins=1)
-Index: oxide-qt-1.14.0~bzr1366/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.16.0~git1463506074.7f69146/oxide/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.14.0~bzr1366.orig/shared/renderer/oxide_content_renderer_client.cc	2016-03-03 11:02:44.007915273 +0000
-+++ oxide-qt-1.14.0~bzr1366/shared/renderer/oxide_content_renderer_client.cc	2016-03-03 11:02:43.955914949 +0000
-@@ -55,6 +55,12 @@
+--- oxide-qt-1.16.0~git1463506074.7f69146.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
++++ oxide-qt-1.16.0~git1463506074.7f69146/oxide/shared/renderer/oxide_content_renderer_client.cc
+@@ -56,6 +56,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
  
@@ -28,10 +28,10 @@ Index: oxide-qt-1.14.0~bzr1366/shared/renderer/oxide_content_renderer_client.cc
  namespace oxide {
  
  void ContentRendererClient::RenderThreadStarted() {
-@@ -75,6 +81,14 @@
-   // Oxide does not support NavigatorContentUtils.
-   // See https://launchpad.net/bugs/1214046
+@@ -78,6 +84,14 @@ void ContentRendererClient::RenderThread
    blink::WebRuntimeFeatures::enableNavigatorContentUtils(false);
+ 
+   blink::WebView::setUseExternalPopupMenus(true);
 +
 +#if defined(USE_PROPRIETARY_CODECS)
 +  media::FFmpegGlue::InitializeFFmpeg();
@@ -43,11 +43,11 @@ Index: oxide-qt-1.14.0~bzr1366/shared/renderer/oxide_content_renderer_client.cc
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.14.0~bzr1366/shared/shared.gyp
+Index: oxide-qt-1.16.0~git1463506074.7f69146/oxide/shared/shared.gyp
 ===================================================================
---- oxide-qt-1.14.0~bzr1366.orig/shared/shared.gyp	2016-03-03 11:02:44.007915273 +0000
-+++ oxide-qt-1.14.0~bzr1366/shared/shared.gyp	2016-03-03 11:02:43.955914949 +0000
-@@ -250,6 +250,7 @@
+--- oxide-qt-1.16.0~git1463506074.7f69146.orig/oxide/shared/shared.gyp
++++ oxide-qt-1.16.0~git1463506074.7f69146/oxide/shared/shared.gyp
+@@ -252,6 +252,7 @@
          '<(DEPTH)/mojo/mojo_public.gyp:mojo_cpp_bindings',
          '<(DEPTH)/net/net.gyp:net',
          '<(DEPTH)/skia/skia.gyp:skia',
