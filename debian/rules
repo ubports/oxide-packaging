@@ -6,8 +6,8 @@
 # This has to be exported to make some magic below work.
 export DH_OPTIONS
 
-DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-COMMON_OPTIONS := -DENABLE_TESTS=1 -DENABLE_HYBRIS_CAMERA=1
+DEB_HOST_MULTIARCH	:= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+COMMON_OPTIONS := -DENABLE_TESTS=1 -DENABLE_HYBRIS_CAMERA=1 -DUSE_GN=1 -DBOOTSTRAP_GN=1
 
 %:
 	dh $@ --parallel
