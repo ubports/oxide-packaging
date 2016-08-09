@@ -1,3 +1,13 @@
+oxide-qt (1.17.2-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.17.2
+    - Bump Chromium rev to 53.0.2785.46
+    - Fix LP: #1605365 - Front camera is inverted on BQ E5
+    - Fix LP: #1608657 - Ensure shrinksViewportContentToFit option is enabled
+      on mobile
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 09 Aug 2016 22:34:35 +0100
+
 oxide-qt (1.17.0-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.0
