@@ -1,3 +1,32 @@
+oxide-qt (1.18.0~git1470863339.49d1970-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.18.0 snapshot
+    - Bump Chromium rev to 54.0.2810.0
+    - Fix LP: #1547149 - Stop using device form factor for configuring various
+      WebPreferences options. This also deprecates
+      OxideQWebPreferences::shrinksStandaloneImagesToFit, which never actually
+      worked and the corresponding setting in Blink no longer exists
+    - Use base::Environment instead of directly calling getenv
+    - Fix LP: #1589902 - Delete gyp support
+    - Fix LP: #1547160 - Use WebPreferences::main_frame_resizes_are_orientation_changes
+      rather than the corresponding command line option
+    - Fix LP: #1547138 - Clean up pinch-zoom settings and always send pinch
+      gestures to content
+    - Turn off WebPreferences::shrinks_viewport_contents_to_fit in windowed mode
+      to avoid some sites being scaled on window resize (incomplete fix for
+      LP: #1545088)
+    - Fix LP: #1610363 - Stop using GetFormFactorHint in shared/renderer
+    - Fix LP: #1605365 - Front camera is inverted on BQ E5
+    - Fix LP: #1597418 - Rename ScreenClient to Screen and move all screen state
+      handling there. This removes some duplication and makes it easier to unit-test
+    - Fix LP: #1260103 - Use an application-specific path for files in /dev/shm
+    - Run Chromium's base_unittests, crypto_unittests and ipc_tests as part of
+      the test sequence
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 10 Aug 2016 23:24:35 +0100
+
 oxide-qt (1.17.0~git1469086699.06a66c1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.0 snapshot (06a66c1)
