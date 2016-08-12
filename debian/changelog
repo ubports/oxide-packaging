@@ -1,3 +1,11 @@
+oxide-qt (1.17.3-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.17.3
+    - Bump Chromium rev to 53.0.2785.57
+    - Fix build failure with gcc 6
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 12 Aug 2016 20:45:19 +0100
+
 oxide-qt (1.17.2-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.2
