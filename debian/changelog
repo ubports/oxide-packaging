@@ -1,3 +1,16 @@
+oxide-qt (1.18.0~git1470958494.76a48ff-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.18.0 snapshot
+    - Bump Chromium rev to 54.0.2824.0
+    - Avoid some console spam with older versions of qtubuntu
+    - Work around the lack of QGuiApplication::screenRemoved with Qt5.2
+    - Avoid a console warning with Qt < 5.5 due to
+      QGuiApplication::primaryScreenChanged not existing
+    - Fix build failure with gcc 6
+    - Fix build failures with Qt < 5.5
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 12 Aug 2016 22:24:14 +0100
+
 oxide-qt (1.18.0~git1470863339.49d1970-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.18.0 snapshot
