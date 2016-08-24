@@ -1,4 +1,4 @@
-oxide-qt (1.17.4-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+oxide-qt (1.17.4-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.4
     - Bump Chromium rev to 53.0.2785.70
