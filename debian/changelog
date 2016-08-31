@@ -1,3 +1,15 @@
+oxide-qt (1.16.9-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.16.9
+    - Fix LP: #1613258 - Avoid a hard runtime dependency on MADV_FREE when
+      compiled against glibc 2.24, and ensure madvise(MADV_FREE) is allowed
+      in the seccomp policy so that it works when the kernel is upgraded to 4.5
+    - Fix LP: #1616132 - Explicitly whitelist accelerated canvas and GPU
+      raster on various devices. This got disabled due to a recent change
+      in libhybris
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 31 Aug 2016 01:33:48 +0100
+
 oxide-qt (1.16.8-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.16.8
