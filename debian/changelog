@@ -1,3 +1,36 @@
+oxide-qt (1.18.0~git1472656324.d6c45dd-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.18.0 snapshot
+    - Bump Chromium rev to 54.0.2837.0
+    - Fix LP: #1615832 - ENABLE_TESTS fixes for Qt5.6
+    - Fix LP: #1618589 - Compile with -fno-delete-null-pointer-checks to work
+      around issues related to changes in GCC6
+    - Fix media-hub build
+    - Make the "Error creating EGLImage" message more useful
+    - Fix a regression with arm cross-compile builds
+    - Fix LP: #1618530 - Ensure we use the correct ozone platform
+    - FilePath::Append DCHECK fails when argument is absolute path
+    - Fix LP: #1260103 - Use the APP_ID environment variable instead of
+      APP_PKGNAME
+    - Fix LP: #1616595 - Fix Qt5.2 build
+    - Fix test flakiness in tst_WebView_newViewRequested.qml
+    - Fix test flakiness in tst_WebView_closeRequested.qml
+    - Fix a build failure on fresh cross-builds
+    - Ensure we check out the GN binaries
+    - Fix LP: #1616132 - Explicitly whitelist accelerated canvas and GPU
+      raster on various devices. This got disabled due to a recent change
+      in libhybris
+    - Fix LP: #1616043 - OSK not displaying
+    - Fix LP: #1615683 - Implement KeyboardEvent.code and KeyboardEvent.key,
+      as parts of Blink now depend on this
+    - Fix LP: #1613258 - Avoid a hard runtime dependency on MADV_FREE when
+      compiled against glibc 2.24, and ensure madvise(MADV_FREE) is allowed
+      in the seccomp policy so that it works when the kernel is upgraded to 4.5
+    - Fix LP: #1601887 - Add a quirk to assume that the native orientation of
+      the primary screen on freiza and cooler devices is landscape
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 31 Aug 2016 18:23:44 +0100
+
 oxide-qt (1.18.0~git1470958494.76a48ff-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.18.0 snapshot
