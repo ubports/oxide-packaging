@@ -1,4 +1,4 @@
-oxide-qt (1.18.0~git1472656324.d6c45dd-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+oxide-qt (1.18.0~git1472656324.d6c45dd-0ubuntu0.15.04.2~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.18.0 snapshot
     - Bump Chromium rev to 54.0.2837.0
@@ -28,6 +28,9 @@ oxide-qt (1.18.0~git1472656324.d6c45dd-0ubuntu0.15.04.1~overlay1~ppa) vivid; urg
       in the seccomp policy so that it works when the kernel is upgraded to 4.5
     - Fix LP: #1601887 - Add a quirk to assume that the native orientation of
       the primary screen on freiza and cooler devices is landscape
+
+  * Don't assert(ffmpeg_branding == "Chromium") in proprietary_codecs builds
+    - update debian/patches/gross-hack-for-dual-ffmpeg-build.patch
 
  -- Chris Coulson <chris.coulson@canonical.com>  Wed, 31 Aug 2016 18:23:44 +0100
 
