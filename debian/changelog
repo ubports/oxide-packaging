@@ -1,3 +1,18 @@
+oxide-qt (1.17.5-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.17.5
+    - Bump Chromium rev to 53.0.2785.80
+    - Fix LP: #1615832 - Don't compile the mock QPA plugin with Qt5.6
+    - Fix LP: #1618589 - Compile with -fno-delete-null-pointer-checks to work
+      around issues related to changes in GCC6
+    - Fix LP: #1618530 - Ensure we use the correct ozone platform
+    - Fix LP: #1616595 - Fix Qt5.2 build
+    - Fix LP: #1260103 - Use the APP_ID environment variable instead of
+      APP_PKGNAME
+    - Ensure we check out the GN binaries
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 01 Sep 2016 13:24:10 +0100
+
 oxide-qt (1.17.4-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.17.4
