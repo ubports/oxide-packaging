@@ -1,7 +1,7 @@
-Index: oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.18.0~git1472656324.d6c45dd.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
-+++ oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/shared/renderer/oxide_content_renderer_client.cc
+--- oxide-qt-1.18.0~git1472807112.34be5c5.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
++++ oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/renderer/oxide_content_renderer_client.cc
 @@ -54,6 +54,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
@@ -30,10 +30,10 @@ Index: oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/shared/renderer/oxide_content
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/build/cmake/ChromiumBuildShim.cmake
+Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/build/cmake/ChromiumBuildShim.cmake
 ===================================================================
---- oxide-qt-1.18.0~git1472656324.d6c45dd.orig/oxide/build/cmake/ChromiumBuildShim.cmake
-+++ oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/build/cmake/ChromiumBuildShim.cmake
+--- oxide-qt-1.18.0~git1472807112.34be5c5.orig/oxide/build/cmake/ChromiumBuildShim.cmake
++++ oxide-qt-1.18.0~git1472807112.34be5c5/oxide/build/cmake/ChromiumBuildShim.cmake
 @@ -210,7 +210,7 @@ function(run_generate_ninja)
      list(APPEND MAKE_GN_ARGS_CMD -Dproprietary_codecs=true)
    else()
@@ -43,22 +43,10 @@ Index: oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/build/cmake/ChromiumBuildShim
    endif()
  
    if(ENABLE_PLUGINS)
-Index: oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/shared/BUILD.gn
+Index: oxide-qt-1.18.0~git1472807112.34be5c5/media/BUILD.gn
 ===================================================================
---- oxide-qt-1.18.0~git1472656324.d6c45dd.orig/oxide/shared/BUILD.gn
-+++ oxide-qt-1.18.0~git1472656324.d6c45dd/oxide/shared/BUILD.gn
-@@ -207,6 +207,7 @@ component("shared") {
-     "//services/shell/public/cpp",
-     "//skia",
-     "//storage/common",
-+    "//third_party/ffmpeg",
-     "//third_party/libXNVCtrl",
-     "//third_party/WebKit/public:blink",
-     "//ui/base",
-Index: oxide-qt-1.18.0~git1472656324.d6c45dd/media/BUILD.gn
-===================================================================
---- oxide-qt-1.18.0~git1472656324.d6c45dd.orig/media/BUILD.gn
-+++ oxide-qt-1.18.0~git1472656324.d6c45dd/media/BUILD.gn
+--- oxide-qt-1.18.0~git1472807112.34be5c5.orig/media/BUILD.gn
++++ oxide-qt-1.18.0~git1472807112.34be5c5/media/BUILD.gn
 @@ -23,12 +23,6 @@ buildflag_header("media_features") {
    ]
  }
@@ -72,3 +60,15 @@ Index: oxide-qt-1.18.0~git1472656324.d6c45dd/media/BUILD.gn
  # Common configuration for targets in the media directory.
  # NOT for exporting.
  config("media_config") {
+Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/BUILD.gn
+===================================================================
+--- oxide-qt-1.18.0~git1472807112.34be5c5.orig/oxide/shared/BUILD.gn
++++ oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/BUILD.gn
+@@ -207,6 +207,7 @@ component("shared") {
+     "//services/shell/public/cpp",
+     "//skia",
+     "//storage/common",
++    "//third_party/ffmpeg",
+     "//third_party/WebKit/public:blink",
+     "//ui/base",
+     "//ui/base/ime:text_input_types",
