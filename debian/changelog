@@ -1,3 +1,73 @@
+oxide-qt (1.17.6-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.17.6 (see USN-3058-1)
+    - Bump Chromium rev to 53.0.2785.89
+    - Fix LP: #1615832 - Don't compile the mock QPA plugin with Qt5.6
+    - Fix LP: #1618589 - Compile with -fno-delete-null-pointer-checks to work
+      around issues related to changes in GCC6
+    - Fix LP: #1618530 - Ensure we use the correct ozone platform
+    - Fix LP: #1616595 - Fix Qt5.2 build
+    - Fix LP: #1260103 - Oxide should use an app-specific path for shared
+      memory files
+    - Ensure we check out the GN binaries
+    - Fix LP: #1615683 - Implement KeyboardEvent.code and KeyboardEvent.key,
+      as parts of Blink now depend on this
+    - Fix LP: #1605365 - Front camera is inverted on BQ E5
+    - Fix LP: #1608657 - Ensure shrinksViewportContentToFit option is enabled
+      on mobile
+    - Fix LP: #1597420 - Add a mock QPA plugin and add integration tests for
+      the Screen and ScreenOrientation APIs
+    - Import updated translations from Launchpad
+    - Add tests for Window.screen{X,Y}
+    - Use attached properties for WebViewTestSupport and WebContextTestSupport
+    - Refactor the huge main() function in the QML test runner
+    - Fix LP: #1568145 - Correctly report the position for video capture devices
+    - Clean up user scripts between tests
+    - Add test for Window.{inner,outer}{Height,Width}
+    - Don't hardcode a size for the root item in QML tests - have it set by
+      the window size instead
+    - Fix LP: #1599236 - ensure GN builds are built with Pango support
+    - Fix LP: #1588219 - fix mediahub GN build
+    - Fix LP: #1592020 - Make oxide_shared_unittests / oxide_qt_unittests work
+      with the GN build
+    - MouseEvents must be used to generate synthetic click events in tests
+    - Fix LP: #1597262 - Only enable plugin support on x86 / x86-64
+    - Fix LP: #1560271 - Refactor CookieStoreProxy and ensure that the cookie
+      store is created on the IO thread
+    - Fix Compositor DCHECK
+    - Call BrowserPlatformIntegration::GetNativeDisplay later to avoid a DCHECK
+    - Fix LP: #1510603 - Stop using GetFormFactorHint for memory optimizations
+    - Fix LP: #1595320 - Ensure GN builds are linked without --fatal-warnings
+    - Make the renderer executable use Chromium's new allocator shim, which
+      means we get an infallible allocator on AArch64, even without TCMalloc
+    - Various allocator related fixes (LP: #1595321 and LP: #1595324)
+    - Fix LP: #1588218 - Make ENABLE_TCMALLOC work with GN builds
+    - Fix LP: #1597040 - Disable TCMalloc on AArch64
+    - Fix LP: #1585291 - Add copy image support to the context menu
+    - Fix LP: #1593232 - Fix navigator.vibrate regression and add tests for this
+    - Ensure that our device::VibrationManager implementation sanitizes
+      arguments properly
+    - Fix LP: #1595136 - Compile the core library with -g1 on hosts with less
+      than 8GB of RAM
+    - Fix LP: #1594941 - Fix static ENABLE_PLUGINS=0 GN build
+    - Fix LP: #1594962 - Disable gn check step for now
+    - Fix LP: #1326697 - Preliminary support for building with GN
+    - Fix LP: #1588217 - Cross-compiling support with GN
+    - Fix LP: #1588942 - Support for bootstrapping a GN binary
+    - Fix LP: #1582638 - Initial build support for AArch64
+    - Fix non-ENABLE_HYBRIS build
+    - Fix LP: #1592296 - Support filenames in drag and drop
+
+  * Build with USE_GN=1, BOOTSTRAP_GN=1
+    - update debian/rules
+  * locales/ has been renamed to chromium_l10n
+    - update debian/liboxideqtcore0.install
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Build depend on python-psutil
+    - update debian/control
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Mon, 05 Sep 2016 21:53:34 +0100
+
 oxide-qt (1.16.11-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.16.11
