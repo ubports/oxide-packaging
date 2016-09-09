@@ -1,7 +1,7 @@
-oxide-qt (1.17.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.17.7-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
-  * Update to v1.17.6 (see USN-3058-1)
-    - Bump Chromium rev to 53.0.2785.89
+  * Update to v1.17.7 (see USN-3058-1)
+    - Bump Chromium rev to 53.0.2785.101
     - Fix LP: #1615832 - Don't compile the mock QPA plugin with Qt5.6
     - Fix LP: #1618589 - Compile with -fno-delete-null-pointer-checks to work
       around issues related to changes in GCC6
