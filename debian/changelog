@@ -1,4 +1,4 @@
-oxide-qt (1.19.0~git1473862859.3e4bf15-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+oxide-qt (1.19.0~git1473862859.3e4bf15-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.19.0 snapshot
     - Bump Chromium rev to 55.0.2853.0
