@@ -1,3 +1,27 @@
+oxide-qt (1.19.0~git1475167834.f5178ef-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.19.0 snapshot
+    - Bump Chromium rev to 55.0.2859.0
+    - Fix LP: #1622385 - Add initial API reference documentation
+    - Fix a DCHECK when tearing down the webview compositor
+    - Ensure StoragePartitions are correctly shutdown to avoid a DCHECK
+    - The Screen destructor runs after the AtExitManager has already been torn
+      down, so don't use base::LazyInstance to avoid a DCHECK
+    - Fix LP: #1625122 - Ensure we actually initialize the elements of
+      Clipboard::cached_info_
+    - Use a persistent store for the TLS Channel ID feature
+    - Fix LP: #1599771 - The webview shouldn't indicate that it is focused when
+      one of its children is
+    - Fix LP: #1503639 and LP: #1626099 - Refactor ownership of BrowserContext
+    - Rename WebViewContentsHelper to WebContentsHelper
+    - Get rid of WebView::GetAllWebViews, which is unused
+    - Refactor and simplify WebPreferences ownership
+
+  * Don't build-depend on qt5-default, but instead build depend on qtbase5-dev,
+    qtbase5-dev-tools and qtchooser
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 04 Oct 2016 19:26:07 +0100
+
 oxide-qt (1.19.0~git1473862859.3e4bf15-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.19.0 snapshot
