@@ -1,4 +1,4 @@
-oxide-qt (1.19.0~git1475167834.f5178ef-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+oxide-qt (1.19.0~git1475615569.6f2ce96-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.19.0 snapshot
     - Bump Chromium rev to 55.0.2859.0
@@ -16,6 +16,11 @@ oxide-qt (1.19.0~git1475167834.f5178ef-0ubuntu0.15.04.1~overlay1~ppa) vivid; urg
     - Rename WebViewContentsHelper to WebContentsHelper
     - Get rid of WebView::GetAllWebViews, which is unused
     - Refactor and simplify WebPreferences ownership
+    - Hoist LocationBarController code out of WebView
+    - Fix LP: #1625484 - Initialize the locationbar position before the
+      webview is navigated for the first time
+    - Move popup blocker and DNT settings to UserAgentSettings
+    - Return video capture devices with the front facing ones first
 
   * Don't build-depend on qt5-default, but instead build depend on qtbase5-dev,
     qtbase5-dev-tools and qtchooser
