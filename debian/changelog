@@ -1,3 +1,16 @@
+oxide-qt (1.18.2-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.18.2
+    - Bump Chromium rev to 54.0.2840.50 
+    - Fix LP: #1625122 - Ensure we actually initialize the elements of
+      Clipboard::cached_info_
+    - Fix LP: #1625484 - Initialize the locationbar position before the
+      webview is navigated for the first time
+    - Fix LP: #1448079 - Don't spin the event loop during shutdown
+    - Fix LP: #1503639 and LP: #1626099 - Refactor ownership of BrowserContext
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 12 Oct 2016 14:16:58 +0100
+
 oxide-qt (1.18.1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.18.1
