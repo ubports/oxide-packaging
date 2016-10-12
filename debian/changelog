@@ -1,3 +1,35 @@
+oxide-qt (1.19.0~git1476217172.580720f-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.19.0 snapshot
+    - Bump Chromium rev to 55.0.2882.0
+    - Download clang_format binaries during the checkout
+    - Fix LP: #1620528 - Ensure navigator.languages matches the embedder
+      provided value (via WebContext::acceptLangs)
+    - Fix LP: #1628496 - Make the auto mode of LocationBarController more
+      intelligent. It now blocks auto hide in the following circumstances:
+      - There is a security error
+      - The renderer has crashed
+      - The renderer is hung
+      - A certificate error request is active
+    - Work around a crash that looks like a Chromium issue
+    - Make use of WebContentsIDTracker in a couple of places to simplify
+      WebView initialization
+    - Don't run insecure content in https://testsuite/ during tests, as it
+      taints this domain for the remainder of the test sequence in
+      single-process mode
+    - Fix a potential leak in BrowserContextDestroyer
+    - Fix LP: #1628494 - Add WebView::terminateWebProcess and
+      WebProcessUnresponsive enum to WebProcessStatus so that applications can
+      implement handling for hung web content processes
+    - Move various navigation related callbacks to WebContentsClient
+    - Fix LP: #1631450 - Implement RWHV::GetFrameSinkId, and ensure our RWHV
+      implementation uses the same cc::SurfaceManager as Chromium's
+      RWHVChildFrame, so that cross-process frames work
+    - Move HttpAuthenticationRequested to WebContentsClient
+    - Move DownloadRequested to WebContentsClient
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 12 Oct 2016 13:10:53 +0100
+
 oxide-qt (1.19.0~git1475615569.6f2ce96-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.19.0 snapshot
