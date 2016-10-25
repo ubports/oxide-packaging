@@ -1,3 +1,59 @@
+oxide-qt (1.18.3-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.18.3 (see USN-3113-1)
+    - Bump Chromium rev to 54.0.2840.71
+    - Fix LP: #1625484 - Initialize the locationbar position before the
+      webview is navigated for the first time
+    - Fix LP: #1448079 - Don't spin the event loop during shutdown
+    - Fix LP: #1503639 and LP: #1626099 - Refactor ownership of BrowserContext
+    - Ensure ENABLE_OXIDEQMLSCENE still defaults on ON with Qt5.2
+    - Fix !ENABLE_HYBRIS build
+    - Exclude the buildtools directory from the tarball
+    - Pass argv[0] to the org.freedesktop.ScreenSaver API rather than the
+      application name
+    - Fix LP: #1547130 - Stop using GetFormFactorHint in PowerSaveBlocker
+    - Fix LP: #1615832 - ENABLE_TESTS fixes for Qt5.6
+    - Fix media-hub build
+    - Make the "Error creating EGLImage" message more useful
+    - Fix a regression with arm cross-compile builds
+    - FilePath::Append DCHECK fails when argument is absolute path
+    - Fix test flakiness in tst_WebView_newViewRequested.qml
+    - Fix test flakiness in tst_WebView_closeRequested.qml
+    - Fix a build failure on fresh cross-builds
+    - Ensure we check out the GN binaries
+    - Fix LP: #1616043 - OSK not displaying
+    - Avoid some console spam with older versions of qtubuntu
+    - Work around the lack of QGuiApplication::screenRemoved with Qt5.2
+    - Avoid a console warning with Qt < 5.5 due to
+      QGuiApplication::primaryScreenChanged not existing
+    - Fix build failures with Qt < 5.5
+    - Fix LP: #1547149 - Stop using device form factor for configuring various
+      WebPreferences options. This also deprecates
+      OxideQWebPreferences::shrinksStandaloneImagesToFit, which never actually
+      worked and the corresponding setting in Blink no longer exists
+    - Use base::Environment instead of directly calling getenv
+    - Fix LP: #1589902 - Delete gyp support
+    - Fix LP: #1547160 - Use WebPreferences::main_frame_resizes_are_orientation_changes
+      rather than the corresponding command line option
+    - Fix LP: #1547138 - Clean up pinch-zoom settings and always send pinch
+      gestures to content
+    - Turn off WebPreferences::shrinks_viewport_contents_to_fit in windowed mode
+      to avoid some sites being scaled on window resize (incomplete fix for
+      LP: #1545088)
+    - Fix LP: #1610363 - Stop using GetFormFactorHint in shared/renderer
+    - Fix LP: #1597418 - Rename ScreenClient to Screen and move all screen state
+      handling there. This removes some duplication and makes it easier to unit-test
+    - Run Chromium's base_unittests, crypto_unittests and ipc_tests as part of
+      the test sequence
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Drop obsolete USE_GN build option
+    - update debian/rules
+  * Don't assert(ffmpeg_branding == "Chromium") in proprietary_codecs builds
+    - update debian/patches/gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 25 Oct 2016 16:23:15 +0100
+
 oxide-qt (1.17.9-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.17.9 (see USN-3091-1)
