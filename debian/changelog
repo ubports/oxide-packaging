@@ -1,3 +1,54 @@
+oxide-qt (1.19.0-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.19.0
+    - Bump Chromium rev to 55.0.2883.21
+    - Download clang_format binaries during the checkout
+    - Fix LP: #1620528 - Ensure navigator.languages matches the embedder
+      provided value (via WebContext::acceptLangs)
+    - Fix LP: #1628496 - Make the auto mode of LocationBarController more
+      intelligent. It now blocks auto hide in the following circumstances:
+      - There is a security error
+      - The renderer has crashed
+      - The renderer is hung
+      - A certificate error request is active
+    - Make use of WebContentsIDTracker in a couple of places to simplify
+      WebView initialization
+    - Don't run insecure content in https://testsuite/ during tests, as it
+      taints this domain for the remainder of the test sequence in
+      single-process mode
+    - Fix LP: #1628494 - Add WebView::terminateWebProcess and
+      WebProcessUnresponsive enum to WebProcessStatus so that applications can
+      implement handling for hung web content processes
+    - Move various navigation related callbacks to WebContentsClient
+    - Fix LP: #1631450 - Implement RWHV::GetFrameSinkId, and ensure our RWHV
+      implementation uses the same cc::SurfaceManager as Chromium's
+      RWHVChildFrame, so that cross-process frames work
+    - Move HttpAuthenticationRequested to WebContentsClient
+    - Move DownloadRequested to WebContentsClient
+    - Fix LP: #1622385 - Add initial API reference documentation
+    - Fix a DCHECK when tearing down the webview compositor
+    - Ensure StoragePartitions are correctly shutdown to avoid a DCHECK
+    - The Screen destructor runs after the AtExitManager has already been torn
+      down, so don't use base::LazyInstance to avoid a DCHECK
+    - Use a persistent store for the TLS Channel ID feature
+    - Fix LP: #1599771 - The webview shouldn't indicate that it is focused when
+      one of its children is
+    - Rename WebViewContentsHelper to WebContentsHelper
+    - Get rid of WebView::GetAllWebViews, which is unused
+    - Refactor and simplify WebPreferences ownership
+    - Hoist LocationBarController code out of WebView
+    - Move popup blocker and DNT settings to UserAgentSettings
+    - Return video capture devices with the front facing ones first
+    - Fix LP: #1448079 - Don't spin the event loop during shutdown
+    - Update the NavigationHistory API. This deprecates the previous list-model
+      API and adds new APIs for querying navigation history, as well as
+      for initiating history navigations.
+
+  * Don't build-depend on qt5-default, but instead build depend on qtbase5-dev,
+    qtbase5-dev-tools and qtchooser
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 26 Oct 2016 17:42:37 +0100
+
 oxide-qt (1.18.2-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.18.2
