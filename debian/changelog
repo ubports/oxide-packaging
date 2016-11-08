@@ -1,7 +1,8 @@
-oxide-qt (1.18.3-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.18.4-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
-  * Update to v1.18.3 (see USN-3113-1)
-    - Bump Chromium rev to 54.0.2840.71
+  * Update to v1.18.4 (see USN-3113-1)
+    - Bump Chromium rev to 54.0.2840.87
+    - Fix LP: #1639185 - Crash during webbrowser-app tests
     - Fix LP: #1625484 - Initialize the locationbar position before the
       webview is navigated for the first time
     - Fix LP: #1448079 - Don't spin the event loop during shutdown
