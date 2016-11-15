@@ -1,3 +1,15 @@
+oxide-qt (1.19.1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
+
+  * Update to v1.19.1
+    - Bump Chromium rev to 55.0.2883.44
+    - Fix LP: #1570828 - Don't crash when receiving messages as the webview is
+      unloading
+
+  * Don't build-depend on libmedia-hub-dev to disable media-hub integration,
+    as it's currently unbuildable on this branch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 15 Nov 2016 13:29:30 +0000
+
 oxide-qt (1.19.0-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.19.0
