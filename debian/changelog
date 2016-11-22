@@ -1,7 +1,9 @@
-oxide-qt (1.18.4-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.18.5-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
 
-  * Update to v1.18.4 (see USN-3113-1)
-    - Bump Chromium rev to 54.0.2840.87
+  * Update to v1.18.5 (see USN-3113-1 and USN-3133-1)
+    - Bump Chromium rev to 54.0.2840.99
+    - Fix LP: #1640542 - Frequent web process crashes with webapps
+    - Fix LP: #1639185 - Crash during webbrowser-app tests
     - Fix LP: #1639185 - Crash during webbrowser-app tests
     - Fix LP: #1625484 - Initialize the locationbar position before the
       webview is navigated for the first time
@@ -53,7 +55,7 @@ oxide-qt (1.18.4-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
   * Don't assert(ffmpeg_branding == "Chromium") in proprietary_codecs builds
     - update debian/patches/gross-hack-for-dual-ffmpeg-build.patch
 
- -- Chris Coulson <chris.coulson@canonical.com>  Tue, 25 Oct 2016 16:23:15 +0100
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 22 Nov 2016 14:01:06 +0000
 
 oxide-qt (1.17.9-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
