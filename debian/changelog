@@ -1,3 +1,26 @@
+oxide-qt (1.20.0~git1479937696.e6fbc8e-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.20.0 snapshot
+    - Bump Chromium rev to 56.0.2924.3
+    - Fix LP: #1639241 - Set the solid colour scrollbar colour correctly
+    - Fix LP: #1643428 - Fix an issue where the fling direction sometimes
+      reverses
+    - Fix LP: #1640542 - Frequent web process crashes with webapps
+    - Fix a build failure with ENABLE_HYBRIS_CAMERA
+    - Fix LP: #1643548 - Emit a warning when importing Oxide.Ubuntu
+    - Fix LP: #1642381 - Don't spin up a zygote process in single process mode
+    - Remove OXIDE_DISABLE_SETUID_SANDBOX environment variable - it doesn't
+      work anyway
+    - Fix LP: #1638915 - build failure on trusty
+
+  * Fix LP: #1642317 - misaligned access when running mksnapshot during the
+    armhf build. Add this as a distro-patch to avoid having to fork the v8
+    repo for upstream checkouts. This isn't a problem for cross-builds anyway
+    - Add debian/patches/lp1642317.patch
+    - Update debian/patches/series
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 23 Nov 2016 23:15:49 +0000
+
 oxide-qt (1.20.0~git1479114350.05ba462-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.20.0 snapshot
