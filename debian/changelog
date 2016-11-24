@@ -1,3 +1,9 @@
+oxide-qt (1.20.0~git1479937696.e6fbc8e-0ubuntu0.15.04.2~overlay1~ppa) vivid; urgency=medium
+
+  * Don't build-depend on libmedia-hub-dev to disable media-hub integration
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 24 Nov 2016 08:30:44 +0000
+
 oxide-qt (1.20.0~git1479937696.e6fbc8e-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.20.0 snapshot
