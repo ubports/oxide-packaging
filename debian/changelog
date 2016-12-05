@@ -1,4 +1,4 @@
-oxide-qt (1.18.5-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+oxide-qt (1.18.5-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.18.5 (see USN-3113-1 and USN-3133-1)
     - Bump Chromium rev to 54.0.2840.99
@@ -55,7 +55,7 @@ oxide-qt (1.18.5-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
   * Don't assert(ffmpeg_branding == "Chromium") in proprietary_codecs builds
     - update debian/patches/gross-hack-for-dual-ffmpeg-build.patch
 
- -- Chris Coulson <chris.coulson@canonical.com>  Tue, 22 Nov 2016 14:01:06 +0000
+ -- Olivier Tilloy <olivier.tilloy@canonical.com>  Wed, 30 Nov 2016 22:29:46 +0100
 
 oxide-qt (1.17.9-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
