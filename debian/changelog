@@ -1,3 +1,19 @@
+oxide-qt (1.21.0~git1483696852.71548c4-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.21.0 snapshot
+    - Bump Chromium rev to 57.0.2970.0
+    - Build everything with the correct symbol visibility (-fvisibility=hidden)
+    - Revert "Decide focus state of webview based on activeFocusItem check of
+      window", as it caused a regression in popup menu handling (LP: #1649577)
+    - Unbreak build for older CMake versions
+    - Unbreak ENABLE_PLUGINS=0 build
+    - Fix LP: #1654363 - Fails to build with vivid gcc
+    - Fix LP: #1654512 - Unbreak component build
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 06 Jan 2017 15:56:34 +0000
+
 oxide-qt (1.20.0~git1481217832.293d3ab-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.20.0 snapshot
