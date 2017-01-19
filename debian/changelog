@@ -1,6 +1,6 @@
-oxide-qt (1.19.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.19.7-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
-  * Update to v1.19.6 (see USN-3153-1)
+  * Update to v1.19.7 (see USN-3153-1)
     - Bump Chromium rev to 55.0.2883.75
     - Download clang_format binaries during the checkout
     - Fix LP: #1620528 - Ensure navigator.languages matches the embedder
@@ -50,6 +50,7 @@ oxide-qt (1.19.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
     - Fix LP: #1647895 - Instantiate the correct PowerSaveBlocker
       implementation on Unity8
     - Fix LP: #1649577 - popup menu regression
+    - Fix LP: #1649861 - session save/restore across oxide versions
 
   * Don't build-depend on qt5-default, but instead build depend on qtbase5-dev,
     qtbase5-dev-tools and qtchooser
@@ -58,7 +59,7 @@ oxide-qt (1.19.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
   * Fix pointer alignment in V8 on ARM (LP: #1648891)
     - add debian/patches/v8-zone-alignment.patch
 
- -- Olivier Tilloy <olivier.tilloy@canonical.com>  Tue, 13 Dec 2016 17:40:00 +0100
+ -- Olivier Tilloy <olivier.tilloy@canonical.com>  Tue, 17 Jan 2017 12:01:00 +0100
 
 oxide-qt (1.18.5-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
