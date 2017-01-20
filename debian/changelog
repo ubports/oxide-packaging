@@ -1,3 +1,11 @@
+oxide-qt (1.20.2-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.20.2
+    - Bump Chromium rev to 56.0.2924.67
+    - Fix LP: #1649861 - session save/restore across oxide versions
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 20 Jan 2017 20:48:34 +0000
+
 oxide-qt (1.20.1-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.20.1
