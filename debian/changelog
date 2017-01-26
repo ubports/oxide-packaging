@@ -1,3 +1,54 @@
+oxide-qt (1.20.3-0ubuntu0.15.04.1~overlay1) UNRELEASED; urgency=medium
+
+  * Update to v1.20.3 (see USN-3180-1)
+    - Bump Chromium rev to 56.0.2924.76
+    - Fix LP: #1642318 - Build failure on arm64
+    - Fix LP: #1649861 - session save/restore across oxide versions
+    - Fix LP: #1632490 - Disable zoom-for-dsf
+    - Fix LP: #1632487 - Update tst_WebView_findController.qml to test that
+      results are updated on navigation
+    - Fix LP: #1610929 - Implement Screen::GetShellMode()
+    - Fix LP: #1637184 - Add libOxideUbuntuUITK, associated QML plugin and
+      UbuntuWebView implementation, which will eventually replace the
+      Ubuntu.Web component
+    - Stop using Q_DECL_EXPORT in various places
+    - Enable use_external_popup_menu and remove our hack for supporting these
+    - Refactor WebContextMenu
+    - Documentation changes - ensure that the PermissionRequest classe
+      indicate the inheritance chain and add missing entries for a few signals
+    - Remove WebView::GetDisplay, as it's unused
+    - Pass context menu params to the webview via a separate object
+    - Fix a compiler warning
+    - Fix a build failure with ENABLE_HYBRIS_CAMERA
+    - Fix a build failure with ENABLE_COMPONENT_BUILD
+    - Fix media hub build
+    - Fix LP: #1637186 - Add context menu implementation to UbuntuWebView
+    - Disable enable_media_routing as it results in a lot of console spam now
+    - Fix LP: #1639241 - Set the solid colour scrollbar colour correctly
+    - Fix LP: #1643428 - Fix an issue where the fling direction sometimes
+      reverses
+    - Fix a build failure with ENABLE_HYBRIS_CAMERA
+    - Fix LP: #1643548 - Emit a warning when importing Oxide.Ubuntu
+    - Fix LP: #1642381 - Don't spin up a zygote process in single process mode
+    - Remove OXIDE_DISABLE_SETUID_SANDBOX environment variable - it doesn't
+      work anyway
+    - Ensure that the value returned from TestApi.getBoundingClientRectForSelector
+      is scaled correctly
+    - Fix LP: #1637187 - Add QML tests for context menu
+    - Fix LP: #1637190 - Add API to allow embedders to customize actions in
+      the context menu
+    - Fix LP: #1640634 - "Open {link,media} in new {tab,window}" entries in
+      context menu shouldn't cause WebView.navigationRequested to fire
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+  * Fix LP: #1642317 - misaligned access when running mksnapshot during the
+    armhf build. Add this as a distro-patch to avoid having to fork the v8
+    repo for upstream checkouts. This isn't a problem for cross-builds anyway
+    - Add debian/patches/lp1642317.patch
+    - Update debian/patches/series
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Thu, 26 Jan 2017 19:17:08 +0000
+
 oxide-qt (1.19.7-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.19.7 (see USN-3153-1)

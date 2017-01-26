@@ -1,8 +1,8 @@
-Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/renderer/oxide_content_renderer_client.cc
+Index: oxide-qt-1.20.0~git1479114350.05ba462/oxide/shared/renderer/oxide_content_renderer_client.cc
 ===================================================================
---- oxide-qt-1.18.0~git1472807112.34be5c5.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
-+++ oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/renderer/oxide_content_renderer_client.cc
-@@ -54,6 +54,12 @@
+--- oxide-qt-1.20.0~git1479114350.05ba462.orig/oxide/shared/renderer/oxide_content_renderer_client.cc
++++ oxide-qt-1.20.0~git1479114350.05ba462/oxide/shared/renderer/oxide_content_renderer_client.cc
+@@ -53,6 +53,12 @@
  #include "media/oxide_web_media_player.h"
  #endif
  
@@ -15,10 +15,10 @@ Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/renderer/oxide_content
  namespace oxide {
  
  void ContentRendererClient::RenderThreadStarted() {
-@@ -76,6 +82,14 @@ void ContentRendererClient::RenderThread
+@@ -73,6 +79,14 @@ void ContentRendererClient::RenderThread
+   // Oxide does not support NavigatorContentUtils.
+   // See https://launchpad.net/bugs/1214046
    blink::WebRuntimeFeatures::enableNavigatorContentUtils(false);
- 
-   blink::WebView::setUseExternalPopupMenus(true);
 +
 +#if defined(USE_PROPRIETARY_CODECS)
 +  media::FFmpegGlue::InitializeFFmpeg();
@@ -30,10 +30,10 @@ Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/renderer/oxide_content
  }
  
  void ContentRendererClient::RenderFrameCreated(
-Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/build/cmake/ChromiumBuildShim.cmake
+Index: oxide-qt-1.20.0~git1479114350.05ba462/oxide/build/cmake/ChromiumBuildShim.cmake
 ===================================================================
---- oxide-qt-1.18.0~git1472807112.34be5c5.orig/oxide/build/cmake/ChromiumBuildShim.cmake
-+++ oxide-qt-1.18.0~git1472807112.34be5c5/oxide/build/cmake/ChromiumBuildShim.cmake
+--- oxide-qt-1.20.0~git1479114350.05ba462.orig/oxide/build/cmake/ChromiumBuildShim.cmake
++++ oxide-qt-1.20.0~git1479114350.05ba462/oxide/build/cmake/ChromiumBuildShim.cmake
 @@ -210,7 +210,7 @@ function(run_generate_ninja)
      list(APPEND MAKE_GN_ARGS_CMD -Dproprietary_codecs=true)
    else()
@@ -43,11 +43,11 @@ Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/build/cmake/ChromiumBuildShim
    endif()
  
    if(ENABLE_PLUGINS)
-Index: oxide-qt-1.18.0~git1472807112.34be5c5/media/BUILD.gn
+Index: oxide-qt-1.20.0~git1479114350.05ba462/media/BUILD.gn
 ===================================================================
---- oxide-qt-1.18.0~git1472807112.34be5c5.orig/media/BUILD.gn
-+++ oxide-qt-1.18.0~git1472807112.34be5c5/media/BUILD.gn
-@@ -23,12 +23,6 @@ buildflag_header("media_features") {
+--- oxide-qt-1.20.0~git1479114350.05ba462.orig/media/BUILD.gn
++++ oxide-qt-1.20.0~git1479114350.05ba462/media/BUILD.gn
+@@ -25,12 +25,6 @@ buildflag_header("media_features") {
    ]
  }
  
@@ -60,12 +60,12 @@ Index: oxide-qt-1.18.0~git1472807112.34be5c5/media/BUILD.gn
  # Common configuration for targets in the media directory.
  # NOT for exporting.
  config("media_config") {
-Index: oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/BUILD.gn
+Index: oxide-qt-1.20.0~git1479114350.05ba462/oxide/shared/BUILD.gn
 ===================================================================
---- oxide-qt-1.18.0~git1472807112.34be5c5.orig/oxide/shared/BUILD.gn
-+++ oxide-qt-1.18.0~git1472807112.34be5c5/oxide/shared/BUILD.gn
-@@ -207,6 +207,7 @@ component("shared") {
-     "//services/shell/public/cpp",
+--- oxide-qt-1.20.0~git1479114350.05ba462.orig/oxide/shared/BUILD.gn
++++ oxide-qt-1.20.0~git1479114350.05ba462/oxide/shared/BUILD.gn
+@@ -213,6 +213,7 @@ component("shared") {
+     "//services/service_manager/public/cpp",
      "//skia",
      "//storage/common",
 +    "//third_party/ffmpeg",
