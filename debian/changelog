@@ -1,3 +1,50 @@
+oxide-qt (1.21.0-0ubuntu0.15.04.1~overlay1~ppa) UNRELEASED; urgency=medium
+
+  * Update to v1.21.0
+    - Bump Chromium rev to 57.0.2987.21
+    - Build everything with the correct symbol visibility (-fvisibility=hidden)
+    - Revert "Decide focus state of webview based on activeFocusItem check of
+      window", as it caused a regression in popup menu handling (LP: #1649577)
+    - Unbreak build for older CMake versions
+    - Unbreak ENABLE_PLUGINS=0 build
+    - Fix LP: #1654363 - Fails to build with vivid gcc
+    - Fix LP: #1654512 - Unbreak component build
+    - Fix LP: #1649577 - Decide the webview focus state from ItemChanged event
+      not the focusIn/Out events
+    - Fix LP: #1637194 - Add <select> popup menu implementation to UbuntuWebView
+    - Fix LP: #1656303 - Test hang at the start of tst_focus.qml
+    - Fix LP: #1649861 - Session save/restore across oxide versions
+    - Test that we don't leak context menus or popup menus when a webview
+      closes
+    - tst_WebViewPopupMenu.qml should verify that the menu is visible
+    - Fix CMake error on cross-compilation after installing qtsystems5-dev
+    - Make WebContextMenu and WebPopupMenu ownership more obvious
+    - Fix LP: #1647799 - Don't run ubuntu-api and ubuntu-ui test sequences
+      when built without ENABLE_UITK_WEBVIEW
+    - Fix LP: #1568296, LP: #1656905 - Change the behaviour of JS dialogs.
+      + Alert dialogs requested from background webviews are no longer
+        displayed immediately, but are delayed until the webview is brought to
+        the foreground. In this case, window.alert() returns and script
+        execution continues immediately.
+      + Confirm and prompt dialogs from background webviews are suppressed.
+      + Dialogs are automatically dismissed if another webview is brought to
+        the foreground.
+      + Before Unload dialogs will only be displayed if they are associated
+        with a navigation that is application initiated or triggered from a
+        user gesture. Otherwise, the navigation will proceed without a prompt.
+    - Remove the openerName parameter from WebContextMenuDesktop.qml
+    - Fix a case where the JavaScriptDialog implementation could leak
+    - Fix LP: #1637195 - Add JS dialog implementation to UbuntuWebView
+    - Emit warnings when trying to provide dialog components with UbuntuWebView
+    - Use AuxiliaryUIFactory for legacy UI components, and add a "Legacy"
+      prefix to those classes
+    - Rename qt::Web{Context,Popup}MenuImpl to qt::Web{Context,Popup}MenuHost
+      for consistency with JavaScriptDialogHost
+
+  * Refresh gross-hack-for-dual-ffmpeg-build.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 08 Feb 2017 16:05:03 +0000
+
 oxide-qt (1.20.3-0ubuntu0.15.04.1~overlay1~ppa) vivid; urgency=medium
 
   * Update to v1.20.3
