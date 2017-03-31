@@ -1,7 +1,7 @@
-oxide-qt (1.21.5-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
+oxide-qt (1.21.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
-  * Update to v1.21.5 (see USN-3180-1, USN-3236-1)
-    - Bump Chromium rev to 57.0.2987.110
+  * Update to v1.21.6 (see USN-3180-1, USN-3236-1, USN-3252-1)
+    - Bump Chromium rev to 57.0.2987.133
     - Fix LP: #1642318 - Build failure on arm64
     - Fix LP: #1649861 - session save/restore across oxide versions
     - Fix LP: #1632490 - Disable zoom-for-dsf
@@ -85,7 +85,7 @@ oxide-qt (1.21.5-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
   * Refresh gross-hack-for-dual-ffmpeg-build.patch
   * Drop debian/patches/lp1642317.patch - fixed upstream
 
- -- Chris Coulson <chris.coulson@canonical.com>  Thu, 26 Jan 2017 19:17:08 +0000
+ -- Chris Coulson <chris.coulson@canonical.com>  Fri, 31 Mar 2017 16:57:08 +0100
 
 oxide-qt (1.19.7-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
