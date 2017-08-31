@@ -1,3 +1,96 @@
+oxide-qt (1.22.1-ubports) vivid; urgency=medium
+
+  * Upgrade to v1.22.1
+    - [qt_screen] allow more than one virtual screen on android devices (Marius Gripsgard)
+    - Bump Chromium rev to a4e34ce (58.0.3029.41) (Chris Coulson)
+    - Bump qt revision to 1.22.1 (Chris Coulson)
+    - Bump Chromium rev to 8939746 (58.0.3029.33) (Chris Coulson)
+    - Fix build failure by adding missing include. (Olivier Tilloy)
+    - Configure 1.22 release branch (Chris Coulson)
+    - Add touch editing UI to UbuntuWebView (LP: #1638852) (Chris Coulson)
+    - Expose selection text in OxideQWebContextMenuParams (LP: #1669732). (Olivier Tilloy)
+    - Bump Chromium rev to 1f01d4d (58.0.3029.19) (Chris Coulson)
+    - Improvements to JavaScriptDialogContentsHelper unit tests (Chris Coulson)
+    - Tear down qt::SecurityStatus before WebContents during unit testing to avoid a UAF (Chris Coulson)
+    - BrowserContext::FromContent shouldn't assume that the provided content::BrowserContext can be safely cast to oxide::BrowserContext (Chris Coulson)
+    - Introduce WebContentsTestHarness (Chris Coulson)
+    - Rename oxide_test_browser_thread_bundle to test_browser_thread_bundle (Chris Coulson)
+    - Move mock_screen_observer.h from shared/test to shared/browser (Chris Coulson)
+    - Bump Chromium rev to pick up GN bootstrap fix (Chris Coulson)
+    - Bump Chromium rev to 9fd4062 (58.0.3029.14) (Chris Coulson)
+    - Bump Chromium rev to 1d195c8 (58.0.3029.6) (Chris Coulson)
+    - Merge crmaster ba4ddd7 into master (Chris Coulson)
+    - Ensure WebContentsDataTracker only touches the contents_ member in the base class (Chris Coulson)
+    - Bump Chromium rev to 4d867fa to pick up a touch editing menu fix (Chris Coulson)
+    - Bump Chromium rev to 8b80588 (58.0.3026.3) (Chris Coulson)
+    - Bump Chromium rev to 273f855 (58.0.3029.0) (Chris Coulson)
+    - Bump Chromium rev to b8eafcb (58.0.3028.0) (Chris Coulson)
+    - Merge crmaster 60a53ad into master (Chris Coulson)
+    - Merge master 95cac04 into crmaster (Chris Coulson)
+    - Bump Chromium rev to db166f7 (58.0.3027.0) (Chris Coulson)
+    - Fix another build failure on trusty (Chris Coulson)
+    - Bump ffmpeg version to pick up fix for LP: #1668614 (Chris Coulson)
+    - Make context menu closing consistent with popup menus (Chris Coulson)
+    - Bump Chromium rev to 66fcd3c (58.0.3026.0) (Chris Coulson)
+    - Bump Chromium rev to 69fbf52 (58.0.3025.0) (Chris Coulson)
+    - Bump Chromium rev to ebf6ef7 (58.0.3022.0) (Chris Coulson)
+    - Allow the webview to be moved without triggering a resize (Chris Coulson)
+    - Bump Chromium rev to c8a5e9b to pull in a GN bootstrap fix (Chris Coulson)
+    - Bump Chromium rev to 8f2b590 (LP: #1665978) (Chris Coulson)
+    - Bump Chromium rev to b6eff04 (58.0.3018.3) (Chris Coulson)
+    - Bump Chromium rev to a43556c (58.0.3021.0) (Chris Coulson)
+    - Merge crmaster 819f9c2 into master (Chris Coulson)
+    - Fix IME composition with site isolation (LP: #1666002) (Chris Coulson)
+    - Remove a left-over LOG(ERROR) (Chris Coulson)
+    - Refactor IME support to work with site isolation (LP: #1666002) (Chris Coulson)
+    - Bump Chromium rev to 0b1feba (58.0.3020.0) (Chris Coulson)
+    - Bump Chromium rev to 986d44d (58.0.3019.0) (Chris Coulson)
+    - Bump Chromium rev to 23b3c49 (58.0.3018.0) (Chris Coulson)
+    - Bump Chromium rev to c05d498 (58.0.3017.0) (Chris Coulson)
+    - Route input events to the correct RWHV so that events work with OOPIF (LP: #1546648) (Chris Coulson)
+    - Merge master 01144a4 into crmaster (Chris Coulson)
+    - Merge crmaster ce0ec2d into master (Chris Coulson)
+    - Bump Chromium rev to 74e1954 (58.0.3015.0) (Chris Coulson)
+    - Clean up tracking of location bar content offset (LP: #1665383) (Chris Coulson)
+    - Bump Chromium rev to cb6cf75 (58.0.3014.0) (Chris Coulson)
+    - Replace Render{Frame,Widget}HostID with a weak pointer class (LP: #1665381) (Chris Coulson)
+    - Initialize WebContentsView::legacy_touch_editing_client_ to fix a memory corruption bug (Chris Coulson)
+    - Bump Chromium rev to bb34262 (58.0.3013.0) (Chris Coulson)
+    - Split out callbacks related to the legacy TouchSelectionController API (LP: #1638852) (Chris Coulson)
+    - Add touch handles for UbuntuWebView (LP: #1638852) (Chris Coulson)
+    - Move TouchSelectionController API to LegacyContentsView (LP: #1638852) (Chris Coulson)
+    - Have the UI component hosts in shared/ create the UI implementations in their constructors (Chris Coulson)
+    - Bump Chromium rev to 1a37706 (58.0.3012.0) (Chris Coulson)
+    - Bump Chromium rev to 87fa986 (58.0.3011.0) (Chris Coulson)
+    - Bump Chromium rev to d4590e3 (58.0.3010.0) (Chris Coulson)
+    - Leak BrowserProcessMain at shutdown to avoid issues related to unclean exits (LP: #1663609) (Chris Coulson)
+    - Fixing build failure with uitk on cross-compile Qt rcc is not found so set it to point to host arch version in cmake (Santosh Mahto)
+    - Bump Chromium rev to e3b233a (58.0.3007.0) (Chris Coulson)
+    - Hopefully fix build failure on non-x64 hosts (Chris Coulson)
+    - Bump Chromium rev to a1df6cf (58.0.3006.0) (Chris Coulson)
+    - Bump Chromium rev to 75296bd (58.0.3004.0) (Chris Coulson)
+    - Fix in relation to 1603729. (Justin McPherson)
+    - Bump Chromium rev to 5e37b34 (58.0.3005.0) (Chris Coulson)
+    - Bump Chromium rev to 9f74639 (58.0.3004.0) (Chris Coulson)
+    - Merge master 20ede67 into crmaster (Chris Coulson)
+    - Merge crmaster 2ef5cee into master (Chris Coulson)
+    - Bump qt version to 1.22 (Chris Coulson)
+    - Bump Chromium rev to 4035701 (58.0.3003.0) (Chris Coulson)
+    - Bump Chromium rev to 4f8de73 (58.0.3001.0) (Chris Coulson)
+    - Bump Chromium rev to 21858ca (58.0.3000.0) (Chris Coulson)
+    - Bump Chromium rev to 9f96f35 (58.0.2999.0) (Chris Coulson)
+    - Bump Chromium rev to 5bf2328 (58.0.2998.0) (Chris Coulson)
+    - Bump Chromium rev to 0bed4ad (58.0.2997.0) (Chris Coulson)
+    - Bump Chromium rev to 242a50c (58.0.2996.0) (Chris Coulson)
+    - Bump Chromium rev to 712f757 (58.0.2995.0) (Chris Coulson)
+    - Bump Chromium rev to 653c84c (58.0.2994.0) (Chris Coulson)
+    - Bump Chromium rev to 5d8acc7 (58.0.2993.0) (Chris Coulson)
+    - Bump Chromium rev to dfef5e3 (58.0.2992.0) (Chris Coulson)
+    - Bump Chromium rev to d766209 (58.0.2991.0) (Chris Coulson)
+    - Bump Chromium rev to 50c275b (58.0.2990.0) (Chris Coulson)
+
+  -- Marius Gripsgard <marius@ubports.com>  Thu, 31 Aug 2017 03:51:03 +0200
+
 oxide-qt (1.21.6-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
 
   * Update to v1.21.6 (see USN-3180-1, USN-3236-1, USN-3252-1)
@@ -524,7 +617,7 @@ oxide-qt (1.12.4-0ubuntu0.15.04.1~overlay1) vivid; urgency=medium
   * Update to v1.12.4
     - Bump Chromium rev to 48.0.2564.79
     - Fix LP: #1376268 - Add TouchSelectionController and
-      WebView.editingCapabilites APIs 
+      WebView.editingCapabilites APIs
     - Fix LP: #1532135 - Ensure enums for value types are actually exposed to
       QML when building with Qt5.5
     - Fix LP: #1441465 - Add camera implementation for phone that uses
@@ -979,18 +1072,18 @@ oxide-qt (1.3.5-0ubuntu8) vivid; urgency=medium
 
 oxide-qt (1.3.5-0ubuntu7) vivid; urgency=medium
 
-  * Change back the dependency order, add arch specific replaces 
-    as a suggested fix to prevent the apt package installation problems 
+  * Change back the dependency order, add arch specific replaces
+    as a suggested fix to prevent the apt package installation problems
     (LP: #1400275)
 
  -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 10 Dec 2014 15:25:29 +0000
 
 oxide-qt (1.3.5-0ubuntu6) vivid; urgency=medium
 
-  * Use the new conflict arrangement still, but change the dependency 
-    order of Oxide's own codecs packages to prefer the -extras. 
-    This should hopefully solve the problem when setting up the 
-    autopkgtest environment with packages that have a hard depedency 
+  * Use the new conflict arrangement still, but change the dependency
+    order of Oxide's own codecs packages to prefer the -extras.
+    This should hopefully solve the problem when setting up the
+    autopkgtest environment with packages that have a hard depedency
     on the -extras package. (LP: #1399597)
 
  -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 05 Dec 2014 13:39:34 +0000
