@@ -7,9 +7,9 @@ pipeline {
         sh '''
         VER="1.22"
 
-        ./oxide-tools/fetch_depot_tools
+        ./fetch_depot_tools
         export PATH=$PATH:$(realpath ~/.cache/depot_tools)
-        ./oxide-tools/fetch_oxide -b $VER ./
+        ./fetch_oxide -b $VER ./
 
         mv src source
         mv debian source
