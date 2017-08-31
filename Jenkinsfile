@@ -9,9 +9,9 @@ pipeline {
 
         ./fetch_depot_tools
         export PATH=$PATH:$(realpath ~/.cache/depot_tools)
-        ./fetch_oxide -b $VER ./
+        ./fetch_oxide -b $VER o
 
-        mv src source
+        mv o/src source
         mv debian source
 
         export SKIP_MOVE=true
