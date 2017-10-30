@@ -1,3 +1,9 @@
+oxide-qt (1.21.7-ubports1) xenial; urgency=medium
+
+  * Update to v1.21.7 
+
+ -- Marius Gripsgard <marius@ubports.com>  Mon, 30 Oct 2017 18:53:11 +0100
+
 oxide-qt (1.21.6-ubports1) xenial; urgency=medium
 
   * Update to v1.21.6 (see USN-3180-1, USN-3236-1, USN-3252-1)
