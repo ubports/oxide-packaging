@@ -1,0 +1,63 @@
+From 6eadd52e7984a96c5dc3c5f923cce9e9f967e899 Mon Sep 17 00:00:00 2001
+From: Marius Gripsgard <marius@ubports.com>
+Date: Fri, 2 Mar 2018 20:40:17 +0100
+Subject: [PATCH] Correctly detect arch inside chroot
+
+---
+ oxide/build/scripts/make_gn_args.py | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git oxide-qt-1.19.8.orig/oxide/build/scripts/make_gn_args.py oxide-qt-1.19.8/oxide/build/scripts/make_gn_args.py
+index 4473875..23cfaa1 100644
+--- oxide-qt-1.19.8.orig/oxide/build/scripts/make_gn_args.py
++++ oxide-qt-1.19.8/oxide/build/scripts/make_gn_args.py
+@@ -25,10 +25,31 @@ import psutil
+ import re
+ from StringIO import StringIO
+ import sys
++import subprocess
+ 
+ EXTRA_ARGS_RE = r'([^=]+)=(.+)'
+ 
+ def HostArch():
++  machine = None
++
++  # If we are in a chroot we cannot rely on platfrom.machine since that
++  # Will not give the correct architecture!
++  try:
++      machine = subprocess.check_output(["dpkg-architecture", "-q", "DEB_HOST_ARCH_CPU"]).strip().decode('utf8')
++  except Exception as e:
++      pass
++
++  if (machine):
++      if machine == "amd64":
++          return "x64"
++      elif machine == "i386":
++          return "x86"
++      elif machine == "arm":
++          return "arm"
++      elif machine == "arm64":
++          return "arm64"
++
++  print("Using fallback method to find architecture!")
+   machine = platform.machine()
+ 
+   if re.match(r'i.86', machine):
+@@ -205,6 +226,7 @@ def WriteConfigurableArgs(writer, options):
+                                 options.host_compiler,
+                                 host_arch)
+   writer.WriteString("host_toolchain", host_toolchain)
++  writer.WriteString("host_cpu", host_arch)
+ 
+   if options.target_arch and options.target_arch != host_arch:
+     writer.WriteBool("oxide_enable_cross_toolchains", True)
+@@ -224,6 +246,7 @@ def WriteConfigurableArgs(writer, options):
+   else:
+     writer.WriteString("custom_toolchain", host_toolchain)
+     writer.WriteString("v8_snapshot_toolchain", host_toolchain)
++    writer.WriteString("target_cpu", host_arch)
+ 
+   if options.component_build:
+     writer.WriteBool("is_component_build", True)
+-- 
+2.7.4
