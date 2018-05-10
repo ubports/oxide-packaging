@@ -1,6 +1,6 @@
-oxide-qt (1.19.8-ubports1ubuntu1) xenial; urgency=medium
+oxide-qt (1.22.0-ubports1) xenial; urgency=medium
 
-  * Downgrade to v1.19.8
+  * Try v1.22
 
  -- Marius <mariogrip@ubuntu.com>  Sun, 25 Feb 2018 20:26:46 +0100
 
