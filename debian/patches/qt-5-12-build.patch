@@ -1,0 +1,10 @@
+--- a/oxide/qt/core/browser/oxide_qt_location_provider.cc
++++ b/oxide/qt/core/browser/oxide_qt_location_provider.cc
+@@ -38,7 +38,6 @@
+ #include "base/threading/thread_task_runner_handle.h"
+ #include "content/public/browser/browser_thread.h"
+ 
+-Q_DECLARE_METATYPE(QGeoPositionInfo)
+ Q_DECLARE_METATYPE(QGeoPositionInfoSource::Error)
+ 
+ namespace oxide {
