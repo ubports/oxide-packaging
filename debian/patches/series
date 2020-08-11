@@ -1,3 +1,5 @@
 v8-zone-alignment.patch
 gross-hack-for-dual-ffmpeg-build.patch
 0001-Correctly-detect-arch-inside-chroot.patch
+
+qt-5-12-build.patch
